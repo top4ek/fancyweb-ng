@@ -1,2 +1,3 @@
-# fancyweb-ng
+## FancyWeb-NG
+
 New generation of FancyWeb interface
