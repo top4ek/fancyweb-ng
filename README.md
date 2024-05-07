@@ -1,6 +1,13 @@
 ## FancyWeb-NG
 
-New generation of FancyWeb interface
+**_New generation of FancyWeb interface_**
+
+### Rules
+
+- All this collective work of ours is carried out **only through PR**, direct commits are blocked.
+- All the dirty day-to-day work is done in the **dev** branch.
+- All builds and automatic deployment are performed from the **deploy** branch.
+- In the **main** branch, after all tests, only the pure source of truth is stored.
 
 ### Running
 
