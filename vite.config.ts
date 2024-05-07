@@ -1,5 +1,11 @@
 import { defineConfig } from 'vite'
 import preact from '@preact/preset-vite'
+import svgr from 'vite-plugin-svgr';
+
+const svgrOpts = {
+  include: '**/*.svg?react',
+  exclude: '',
+}
 
 // https://vitejs.dev/config/
 export default defineConfig((args) => {
@@ -10,18 +16,18 @@ export default defineConfig((args) => {
       main: () => {
         return {
           root: "./src/sites/main",
-          plugins: [preact()],
+          plugins: [preact(), svgr(svgrOpts)],
         }
       },
       camera: () => {
         return {
           root: "./src/sites/camera",
-          plugins: [preact()],
+          plugins: [preact(), svgr(svgrOpts)],
         }
       },
       development: () => {
         return {
-          plugins: [preact()],
+          plugins: [preact(), svgr(svgrOpts)],
         }
       },
     },
@@ -33,7 +39,7 @@ export default defineConfig((args) => {
             outDir: '../dist/main',
             emptyOutDir: true,
           },
-          plugins: [preact()],
+          plugins: [preact(), svgr(svgrOpts)],
         }
       },
       camera: () => {
@@ -43,12 +49,12 @@ export default defineConfig((args) => {
             outDir: '../dist/camera',
             emptyOutDir: true,
           },
-          plugins: [preact()],
+          plugins: [preact(), svgr(svgrOpts)],
         }
       },
       production: () => {
         return {
-          plugins: [preact()],
+          plugins: [preact(), svgr(svgrOpts)],
         }
       },
     },

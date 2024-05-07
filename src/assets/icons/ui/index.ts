@@ -1,7 +1,10 @@
-import Burger from './burger.svg?raw';
-import Triangle from './triangle.svg?raw';
+/// <reference types="vite-plugin-svgr/client" />
+import burger from './burger.svg?react';
+import cross from './cross.svg?react';
+import triangle from './triangle.svg?react';
 
 export default {
-  burger: Burger,
-  triangle: Triangle,
+  Burger: burger,
+  Cross: cross,
+  Triangle: triangle,
 }
