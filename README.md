@@ -2,7 +2,14 @@
 
 New generation of FancyWeb interface
 
-Clone the repo.  
+### Running
+
+Clone the repo and go into it:
+```
+git clone https://github.com/openipc/fancyweb-ng 
+cd interface
+```
+
 Install Node.js.  
 Enable Corepack.  
 
