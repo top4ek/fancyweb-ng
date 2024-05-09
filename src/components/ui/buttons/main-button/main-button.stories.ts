@@ -3,6 +3,7 @@ import Button from './main-button';
 
 const meta = {
   component: Button,
+  title: 'Design System/UI/Buttons/Main Button',
 } satisfies Meta<typeof Button>;
 
 export default meta;

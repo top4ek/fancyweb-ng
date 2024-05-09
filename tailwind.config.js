@@ -7,8 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        'blue': '#4c60d8',
-        'btn-blue-hover': '#0159cb',
+        'brand-blue': '#4c60d8',
+        'btn-blue-hover': '#3949ab',
+        'btn-blue-click': '#283593',
+        'light-blue': '#b7bfef',
+        'gray': '#9e9e9e',
       },
     },
   },
