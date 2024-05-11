@@ -1,10 +1,10 @@
-import { HeaderMenuLink as HeaderMenuLinkProps } from '../../types/types';
+import { Link } from '../../types/types';
 
-export default function HeaderMenuLink(props: HeaderMenuLinkProps) {
+export default function HeaderMenuLink(props: Link) {
   const { title, link } = props;
 
   return (
-    <li>
+    <li className="text-white opacity-60 hover:opacity-100">
       <a class="" href={link}>{title}</a>
     </li>
   );

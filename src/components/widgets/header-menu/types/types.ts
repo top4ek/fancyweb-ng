@@ -1,19 +1,17 @@
-export type HeaderMenuListItem = {
-  title: string;
-  link?: string;
-  children?: Omit<HeaderMenuLink, 'children'>;
+type Title = {
+  title: string,
 }
 
-export type HeaderMenuList = {
-  list: HeaderMenuListItem[];
+export type Link = Title & {
+  link: string,
 }
 
-type HeaderMenuItem = Omit<HeaderMenuListItem, 'link' | 'children'> ;
-
-export type HeaderMenuLink = HeaderMenuItem & {
-  link: string;
+export type Button = Title & {
+  children: Link[],
 }
 
-export type HeaderMenuButton = HeaderMenuItem & {
-  children: HeaderMenuLink[];
+type List = (Link | Button)[];
+
+export type HeaderMenuProps = {
+  list: List,
 }

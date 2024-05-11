@@ -5,6 +5,13 @@ import { headerMenuConstants } from './constants';
 const meta: Meta<typeof HeaderMenu> = {
   component: HeaderMenu,
   title: 'Design System/Widgets/Header Menu',
+  decorators: [
+    (Story) => (
+      <div class="bg-brand-blue">
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export default meta;
