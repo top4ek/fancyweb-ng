@@ -17,6 +17,7 @@ export default {
         'light-blue': '#b7bfef',
         'gray': '#9e9e9e',
         'white': '#eeeeee',
+        'crimson': '#ff4785',
       },
     },
   },

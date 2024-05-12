@@ -1,3 +1,5 @@
+import { Signal } from "@preact/signals";
+
 type Title = {
   title: string,
 }
@@ -8,6 +10,7 @@ export type Link = Title & {
 
 export type Button = Title & {
   children: Link[],
+  signal: Signal,
 }
 
 type List = (Link | Button)[];

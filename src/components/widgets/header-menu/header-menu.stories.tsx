@@ -7,7 +7,7 @@ const meta: Meta<typeof HeaderMenu> = {
   title: 'Design System/Widgets/Header Menu',
   decorators: [
     (Story) => (
-      <div class="bg-brand-blue">
+      <div className="bg-brand-blue">
         <Story />
       </div>
     ),
