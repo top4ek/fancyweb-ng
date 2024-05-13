@@ -10,28 +10,18 @@ export default function Header() {
 
   function handleBurgerClick() {
     setMobMenuVisible(!isMobMenuVisible);
+    console.log('Burger!!!');
   }
 
   return (
-    <header className="min-h-14 flex flex-col justify-center items-start">
-      <div className="min-h-14 flex flex-row flex-nowrap items-center w-full px-2.5">
-        <div className="flex-none w-32">
-          <Logo /> 
-        </div>
-        <div className="ml-auto">
-          { window.innerWidth < 800
-            ?  <HeaderBurgerButton clickHandler={handleBurgerClick} />
-            :  <HeaderMenu list={headerMenuConstants} />
-          }
-        </div>
-      </div>
-      { window.innerWidth < 800 && isMobMenuVisible && 
-        <div className="max-h-0 relative w-full">
-            <div className="px-2.5 opacity-90 bg-brand-blue w-full absolute top-0">
-              <HeaderMenu list={headerMenuConstants} />
-            </div>
-        </div>
-      }
+    <header className="">
+      <nav className="min-h-14 flex flex-row justify-between items-center px-4 relative">
+        <a href="/index" className="block w-28">
+          <Logo />
+        </a>
+        <HeaderMenu list={headerMenuConstants} isMobMenuVisible={isMobMenuVisible}/>
+        <HeaderBurgerButton clickHandler={handleBurgerClick}/>
+      </nav>
     </header>
   );
 }

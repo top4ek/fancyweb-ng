@@ -19,8 +19,10 @@ export default function HeaderBurgerButton(props: PropsType) {
   }
 
   return (
-    <IconButton clickHandler={handleClik} withBorder={true}>
-      {isActive ? <Cross /> : <Burger />}
-    </IconButton>
+    <div className="block md:hidden">
+      <IconButton clickHandler={handleClik} withBorder={true}>
+        {isActive ? <Cross /> : <Burger />}
+      </IconButton>
+    </div>
   );
 }

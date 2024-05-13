@@ -10,11 +10,12 @@ export type Link = Title & {
 
 export type Button = Title & {
   children: Link[],
-  signal: Signal,
+  signal?: Signal,
 }
 
 type List = (Link | Button)[];
 
 export type HeaderMenuProps = {
   list: List,
+  isMobMenuVisible: boolean,
 }
