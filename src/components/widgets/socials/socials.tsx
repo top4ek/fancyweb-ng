@@ -6,7 +6,7 @@ type Social = { link: string, title: Socials };
 
 export default function Socials() {
   return (
-    <ul className="flex flex-row">
+    <ul className="flex flex-row max-w-max">
       {socialContants.map((social: Social) => {
         const Icon = SocialIcons[social.title];
         return (
