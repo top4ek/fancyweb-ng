@@ -1,3 +1,5 @@
+![OpenIPC logo][logo]
+
 ## FancyWeb-NG
 
 **_New generation of FancyWeb interface_**
@@ -14,7 +16,7 @@
 Clone the repo and go into it:
 ```
 git clone https://github.com/openipc/fancyweb-ng 
-cd interface
+cd fancyweb-ng
 ```
 
 Install Node.js.  
@@ -26,3 +28,11 @@ Run cameras' site development: `yarn run dev-camera`
 Run Storybook: `yarn run storybook`  
 
 Builds are being preparing and be ready soon. Wait a bit.
+
+
+### Technical support and donations
+
+Please **_[support our project](https://openipc.org/support-open-source)_** with donations or orders for development or maintenance. Thank you!
+
+
+[logo]: https://openipc.org/assets/openipc-logo-black.svg
