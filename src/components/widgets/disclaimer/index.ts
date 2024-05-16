@@ -1,1 +1,1 @@
-export * as default from './disclaimer';
+export { default } from './disclaimer';
