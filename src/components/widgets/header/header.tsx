@@ -10,8 +10,8 @@ export default function Header() {
 
   function handleBurgerClick() {
     setMobMenuVisible(!isMobMenuVisible);
-    console.log('Burger!!!');
   }
+
 
   return (
     <header className="">
