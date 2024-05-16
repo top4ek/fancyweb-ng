@@ -1,29 +1,41 @@
-import { useSignalEffect } from '@preact/signals';
 import { Button } from '../../types/types';
 import HeaderMenuLink from '../header-menu-link/header-menu-link';
 import UIIcons from '../../../../../assets/icons/ui';
-import {useState} from 'preact/hooks';
+import { createRef } from 'preact';
+import {useState, useEffect} from 'preact/hooks';
 
 export default function HeaderMenuButton(props: Button) {
-  const { title, children, signal } = props;
+  const { title, children } = props;
   const { Triangle } = UIIcons;
   const [isVisible, setVisible] = useState(false);
+ 
+  const li = createRef();
+
+  useEffect(() => {
+    const handleOutsideClick = (evt: MouseEvent) => {
+      if (li.current && window.innerWidth >= 768 ) {
+        !li.current.contains(evt.target) && setVisible(false);
+      }
+    };
+    document.addEventListener('click', handleOutsideClick);
+    return () => document.removeEventListener('click', handleOutsideClick);
+  });
+
+  useEffect(() => {
+    const mql = window.matchMedia("(min-width: 726px)");
+    const handleViewPortWidthChange = () => {
+      setVisible(false);
+    };
+    mql.addEventListener('change', handleViewPortWidthChange);
+    return () => mql.removeEventListener('change', handleViewPortWidthChange);
+  });
 
   function handleClick() {
-    signal.value = !isVisible;
     setVisible(!isVisible);
   }
 
-  useSignalEffect(() => {
-    signal.value;
-    if (window.innerWidth > 800) {
-      setVisible(false);
-      signal.value = false;
-    }
-  });
-
   return (
-    <li className="md:relative">
+    <li className="md:relative" ref={li}>
       <button className={"text-white opacity-60 hover:opacity-100 flex flex-row items-center gap-x-0.5 md:px-2"} onClick={handleClick}>
         <span>{title}</span>
         <Triangle />
