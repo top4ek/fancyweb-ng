@@ -9,7 +9,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const H1Story: Story = {
+export const H2Story: Story = {
   args: {
     content: 'OpenIPC is an alternative open firmware for your IP camera.',
   },
