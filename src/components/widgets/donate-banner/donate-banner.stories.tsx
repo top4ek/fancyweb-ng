@@ -10,7 +10,13 @@ export default meta;
 
 type Story = StoryObj<typeof DonateBanner>;
 
-export const DonateBannerStory: Story = {
+export const DonateBannerSmallStory: Story = {
+  args: {
+    size: 'small',
+  },
+}
+
+export const DonateBannerBigStory: Story = {
   args: {
     size: 'big',
   },
