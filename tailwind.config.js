@@ -23,6 +23,8 @@ export default {
         'donban-bg': '#cfe2ff',
         'opencol-donban-bg-from': '#3385ff',
         'opencol-donban-bg-to': '#52bcfa',
+        'wallet-bg': '#f8f9fa',
+        'wallet-border': '#d2d2d2',
         'crimson': '#ff4785',
       },
     },
