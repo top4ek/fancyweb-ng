@@ -21,6 +21,8 @@ export default {
         'white': '#fff',
         'black': '#000',
         'donban-bg': '#cfe2ff',
+        'opencol-donban-bg-from': '#3385ff',
+        'opencol-donban-bg-to': '#52bcfa',
         'crimson': '#ff4785',
       },
     },
