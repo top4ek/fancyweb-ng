@@ -1,8 +1,8 @@
-import { TeamMembersProps } from './types';
+import { TeamMemberProps } from './types';
 import bg from '../../../assets/icons/ui/camera-preview-background.svg';
 import UIIcons from '../../../assets/icons/social';
 
-export default function TeamMember(props: TeamMembersProps) {
+export default function TeamMember(props: TeamMemberProps) {
   const { imgSrc, name, bio, socials } = props;
 
   return (

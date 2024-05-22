@@ -1,4 +1,4 @@
-export type TeamMembersProps = {
+export type TeamMemberProps = {
   imgSrc?: string,
   name: string,
   bio: string,
