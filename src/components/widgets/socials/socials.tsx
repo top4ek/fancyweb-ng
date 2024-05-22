@@ -11,7 +11,7 @@ export default function Socials() {
         const Icon = SocialIcons[social.title];
         return (
           <li className="transition-colors duration-500 border border-grey-bg first:rounded-l-md last:rounded-r-md hover:border-black">
-            <a href={social.link} className="block min-h-10 min-w-10 flex flex-col justify-center items-center">
+            <a href={social.link} className="block min-h-10 min-w-10 flex flex-col justify-center items-center *:w-[16px] *:h-[16px]">
               <Icon />
             </a>
           </li>
