@@ -1,4 +1,11 @@
-export const socialContants = [
+import SocialIcons from '../../../../assets/icons/social';
+
+type Social<T> = {
+  title: T,
+  link: string,
+}[];
+
+export const socialContants: Social<keyof typeof SocialIcons> = [
   {
     title: 'Github',
     link: '',
