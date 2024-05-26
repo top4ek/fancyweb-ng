@@ -6,4 +6,5 @@ export type ComplexParagraph = {
 
 export type ParagraphProps = {
   content: string | ComplexParagraph,
+  size?: 'big' | 'normal' | 'small',
 }

@@ -5,14 +5,14 @@ export default function Alliance() {
   const { OpenIPC, Majestic } = AllianceIcons;
 
   return (
-    <section className="flex flex-col">
+    <div className="flex flex-col">
       <div>
         <H2 content="Alliance" />
       </div>
-      <div className="flex flex-row justify-between *:w-[49%] *:h-[49%]">
+      <div className="flex flex-row justify-between *:w-[96%] *:h-[96%]">
         <OpenIPC />
         <Majestic />
       </div>
-    </section>
+    </div>
   );
 }
