@@ -1,7 +1,7 @@
 import { ParagraphProps } from './types';
 
 export default function Paragraph(props: ParagraphProps) {
-  const { content } = props;
+  const { content, size } = props;
   const text = typeof content === 'string' ? content : content.p;
 
   const split = (text: string) => {
@@ -30,8 +30,18 @@ export default function Paragraph(props: ParagraphProps) {
     })
   }
 
+  type Sizes = Exclude<ParagraphProps['size'], undefined>;
+  const getPStyle = (size: Sizes | undefined) => {
+    const fab: Record<Sizes, () => string> = {
+      'big': () => 'text-lg',
+      'normal': () => 'text-base',
+      'small': () => 'text-sm',
+    };
+    return size ? fab[size]() : fab['normal'](); 
+  };
+
   const hStyle = 'text-base font-bold';
-  const pStyle = 'text-base';
+  const pStyle = getPStyle(size);
 
   return (
     <>
