@@ -8,10 +8,14 @@ import { introduction } from './constants';
 export default function Introduction() {
   return (
       <>
-        <H1 content={introduction.h1} />
+        <div className="py-4">
+          <H1 content={introduction.h1} />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-[11fr,5fr] gap-x-12">
           <section className="flex flex-col">
-            <H2 content={introduction.h2_1} />
+            <div className="py-2 md:py-0">
+              <H2 content={introduction.h2_1} />
+            </div>
             <div className="flex flex-col gap-y-4">
               <Paragraph content={introduction.p1} />
               <Paragraph content={introduction.p2} />
@@ -37,7 +41,13 @@ export default function Introduction() {
             </div>
           </section>
           <section className="flex flex-col gap-y-4">
+            <div className="pt-4 md:pt-0">
+              <H2 content="Alliance" />
+            </div>
             <Alliance />
+            <div className="pt-4 md:pt-0">
+              <H2 content="Supporters" />
+            </div>
             <Supporters />
           </section>
         </div>

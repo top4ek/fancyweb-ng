@@ -7,9 +7,6 @@ export default function Alliance() {
 
   return (
     <div className="flex flex-col">
-      <div>
-        <H2 content="Alliance" />
-      </div>
       <div className="flex flex-row justify-between">
         <a href={allianceConstants.openIPC} className="w-[48%]">
           <OpenIPC />
