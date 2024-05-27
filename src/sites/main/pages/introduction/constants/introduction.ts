@@ -1,6 +1,6 @@
 export const introduction = {
   h1: 'Introduction',
-  h2_1: 'OpenIPC is an alternative open firmware for your IP camera.',
+  h2_1: 'OpenIPC is an alternative open firmware for your IP camera',
   p1: 'OpenIPC is an open-source operating system targeting IP cameras with ARM and MIPS processors from several manufacturers in order to replace that closed, opaque, insecure, often abandoned and unsupported firmware pre-installed by a vendor.',
   p2: 'OpenIPC Firmware comes as binary pre-compiled files for easy installation by end-user. Also, we provide full access to the source files for further development and improvement by any capable programmer willing to contribute to the project. OpenIPC source code is released under one of the most simple open source license agreements, [MIT License](https://opensource.org/licenses/MIT), giving users express permission to reuse code for any purpose, even as part of a proprietary software. We only ask you politely to contribute your improvements back to us. We would be grateful for any feedback and suggestions.',
   p3: 'OpenIPC Firmware uses [Buildroot](https://buildroot.org/) to build its Linux distro, and utilizes either Majestic, Mini or Venc streamer.',
