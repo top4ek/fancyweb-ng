@@ -9,14 +9,12 @@ export default function Introduction() {
   return (
       <>
         <H1 content={introduction.h1} />
-        <div className="grid grid-cols-1 md:grid-cols-[10fr,6fr] gap-x-12">
+        <div className="grid grid-cols-1 md:grid-cols-[11fr,5fr] gap-x-12">
           <section className="flex flex-col">
             <H2 content={introduction.h2_1} />
             <div className="flex flex-col gap-y-4">
               <Paragraph content={introduction.p1} />
               <Paragraph content={introduction.p2} />
-              <Paragraph content={introduction.p3} />
-              <Paragraph content={introduction.p4} size="small" />
               <div className="flex flex-col gap-y-2 pt-6 pb-4">
                 <H2 content='For quick dive into an OpenIPC project:' />
                 <a href="https://github.com/OpenIPC/wiki/blob/master/en/installation.md" className="text-xl font-medium underline text-brand-blue max-w-fit">
@@ -29,6 +27,8 @@ export default function Introduction() {
                   View source code on GitHub
                 </a>
               </div>
+              <Paragraph content={introduction.p3} />
+              <Paragraph content={introduction.p4} size="small" />
               <H2 content={introduction.h2_2} />
               <Paragraph content={introduction.p5} />
               <Paragraph content={introduction.p6} />
