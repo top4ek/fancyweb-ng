@@ -15,7 +15,7 @@ export default function DonateBanner(props: DonateBannerProps) {
         <a className="block" href={donateBannerConstants.small.link.href}>
           <div className="max-w-80 bg-gradient-to-t from-opencol-donban-bg-from to-opencol-donban-bg-to p-0.5 rounded-full flex flex-row justify-between items-center text-white font-medium">
               <div className="flex flex-row justify-center items-center grow shrink">
-                <p className="text-sm tracking-widest">{donateBannerConstants.small.text}</p>
+                <p className="text-[13px] text-center tracking-widest">{donateBannerConstants.small.text}</p>
               </div> 
               <div className="bg-white w-12 h-12 rounded-full flex flex-col justify-center items-center grow-0 shrink-0 *:w-9 *:h-9">
                 <OpenCollective />
