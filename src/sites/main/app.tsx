@@ -1,8 +1,9 @@
 import Header from '../../components/widgets/header/header';
 import Footer from '../../components/widgets/footer/footer';
 import Router from 'preact-router';
-import Introduction from './pages/introduction/introduction';
-import SupportOpenSource from './pages/support-open-source/support-open-source';
+import Introduction from './pages/introduction';
+import SupportOpenSource from './pages/support-open-source';
+import OurTeam from './pages/our-team/';
 import DonateBanner from '../../components/widgets/donate-banner/donate-banner';
 import './index.css';
 
@@ -16,6 +17,7 @@ export function App() {
             <Introduction path="/" />
             <Introduction path="/introduction" />
             <SupportOpenSource path="/support-open-source" />
+            <OurTeam path="/our-team" />
           </Router>
         </div>
         <div className="w-full max-w-[1240px] mt-auto pt-12 pb-4">
