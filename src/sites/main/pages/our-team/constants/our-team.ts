@@ -1,4 +1,12 @@
-export const IPCCore = [
+import { TeamProps } from '../../../../../components/widgets/team/types';
+export const ourTeamConstants = {
+  h1: 'Our Team',
+  p1: 'OpenIPC is a community-driven open source project, and many people contribute to its codebase. Kudos to them! There is also a core team of skilled developers who work hard to expand the list of [supported hardware platforms](https://openipc.org/supported-hardware), extend the functionality and stability of the firmware, review submitted code, and coordinate community efforts. Get to know the team and their areas of expertise:',
+  h2_1: 'IPC Core',
+  h2_2: 'URLLC and FPV',
+}
+
+export const IPCCoreConstants: TeamProps['members'] = [
   {
     imgSrc: 'https://avatars.githubusercontent.com/u/68112357',
     name: 'FlyRouter',
@@ -265,6 +273,99 @@ export const IPCCore = [
       },
       {
         link: 'https://t.me/themactep',
+        icon: 'Telegram',
+      }
+    ],
+  },
+];
+
+export const URLLCandFPVConstants: TeamProps['members'] = [
+  {
+    imgSrc: 'https://avatars.githubusercontent.com/u/8301265',
+    name: 'iHardRock',
+    bio: 'Venc, Vdec, FPV systems',
+    socials: [
+      {
+        link: 'https://github.com/iHardRock/',
+        icon: 'Github',
+      },
+      {
+        link: 'https://t.me/getdataflow',
+        icon: 'Telegram',
+      }
+    ],
+  },
+  {
+    imgSrc: 'https://avatars.githubusercontent.com/u/57532232',
+    name: 'MarioFPV',
+    bio: 'YouTuber, Facebook group admin, OSD developer for VDEC, FPV firmware tester',
+    socials: [
+      {
+        link: 'https://github.com/MarioFPVdev/',
+        icon: 'Github',
+      },
+      {
+        link: 'https://t.me/Mario_FPV',
+        icon: 'Telegram',
+      }
+    ],
+  },
+  {
+    imgSrc: 'https://avatars.githubusercontent.com/u/148837522',
+    name: 'KennyPlus',
+    bio: 'Hardware Development Engineer, FPV Systems',
+    socials: [
+      {
+        link: 'https://github.com/KennyPlus/',
+        icon: 'Github',
+      },
+      {
+        link: 'https://t.me/@kenny_plus',
+        icon: 'Telegram',
+      }
+    ],
+  },
+  {
+    imgSrc: 'https://avatars.githubusercontent.com/u/3262402',
+    name: 'PetruSoroaga',
+    bio: 'Ruby FPV',
+    socials: [
+      {
+        link: 'https://github.com/PetruSoroaga/RubyFPV/',
+        icon: 'Github',
+      },
+      {
+        link: 'https://t.me/@PetruSoroaga',
+        icon: 'Telegram',
+      }
+    ],
+  },
+  {
+    imgSrc: 'https://avatars.githubusercontent.com/u/97629810',
+    name: 'TipoMan',
+    bio: 'Linux, Sensor Drivers, FPV Systems',
+    socials: [
+      {
+        link: 'https://github.com/tipoman9',
+        icon: 'Github',
+      },
+      {
+        link: 'https://t.me/@tipoman',
+        icon: 'Telegram',
+      }
+    ],
+  },
+  {
+    imgSrc: 'https://avatars.githubusercontent.com/u/161963520',
+    name: 'Milos',
+    bio: 'Linux, Sensor Drivers, FPV Systems',
+    socials: [
+      {
+        link: 'https://github.com/Sakalva/',
+        icon: 'Github',
+      },
+      {
+        link: 'https://t.me/@Sakalva',
         icon: 'Telegram',
       }
     ],

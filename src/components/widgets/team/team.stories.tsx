@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/preact';
 import Team from './team';
-import { IPCCore } from '../../../sites/main/pages/our-team/constants/team';
+import { IPCCoreConstants } from '../../../sites/main/pages/our-team/constants';
 
 const meta: Meta<typeof Team> = {
   component: Team,
@@ -12,6 +12,6 @@ type Story = StoryObj<typeof Team>;
 
 export const TeamStory: Story = {
   args: {
-    members: IPCCore,
+    members: IPCCoreConstants,
   }
 }
