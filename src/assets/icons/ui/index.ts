@@ -5,6 +5,7 @@ import triangle from './triangle.svg?react';
 import logo from './logo.svg?react';
 import coin from './coin.svg?react';
 import openCollective from './open-collective.svg?react';
+import cameraPreloader from './camera-preloader.svg?react';
 
 export default {
   Burger: burger,
@@ -13,4 +14,5 @@ export default {
   Logo: logo,
   Coin: coin,
   OpenCollective: openCollective,
+  CameraPreloader: cameraPreloader,
 }
