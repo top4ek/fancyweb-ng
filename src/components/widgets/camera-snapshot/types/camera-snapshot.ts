@@ -1,4 +1,4 @@
-export type CameraSnapshotProps = {
+export type CamData = {
   soc: string,
   date: string,
   firmware: string,
@@ -6,4 +6,8 @@ export type CameraSnapshotProps = {
   socTemp?: number,
   resolution: string,
   size: number,
+}
+
+export type CameraSnapshotProps = {
+  id: string,
 }
