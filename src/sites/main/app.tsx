@@ -4,6 +4,7 @@ import Router from 'preact-router';
 import Introduction from './pages/introduction';
 import SupportOpenSource from './pages/support-open-source';
 import OurTeam from './pages/our-team/';
+import OpenWall from './pages/open-wall';
 import DonateBanner from '../../components/widgets/donate-banner/donate-banner';
 import './index.css';
 
@@ -18,6 +19,7 @@ export function App() {
             <Introduction path="/introduction" />
             <SupportOpenSource path="/support-open-source" />
             <OurTeam path="/our-team" />
+            <OpenWall path="/open-wall" />
           </Router>
         </div>
         <div className="w-full max-w-[1240px] mt-auto pt-12 pb-4">
