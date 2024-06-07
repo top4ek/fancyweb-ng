@@ -7,6 +7,10 @@ const svgrOpts = {
   exclude: '',
 }
 
+const serverOpts = {
+  host: '0.0.0.0',
+  port: 5173,
+}
 // https://vitejs.dev/config/
 export default defineConfig((args) => {
   const { command, mode } = args;
@@ -16,17 +20,20 @@ export default defineConfig((args) => {
       main: () => {
         return {
           root: "./src/sites/main",
+          server: serverOpts,
           plugins: [preact(), svgr(svgrOpts)],
         }
       },
       camera: () => {
         return {
           root: "./src/sites/camera",
+          server: serverOpts,
           plugins: [preact(), svgr(svgrOpts)],
         }
       },
       development: () => {
         return {
+          server: serverOpts,
           plugins: [preact(), svgr(svgrOpts)],
         }
       },
