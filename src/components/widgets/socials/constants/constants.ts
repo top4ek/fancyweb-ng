@@ -8,22 +8,22 @@ type Social<T> = {
 export const socialContants: Social<keyof typeof SocialIcons> = [
   {
     title: 'Github',
-    link: '',
+    link: 'https://github.com/openipc',
   },
   {
     title: 'Twitter',
-    link: '',
+    link: 'https://twitter.com/openipc',
   },
   {
     title: 'Facebook',
-    link: '',
+    link: 'https://www.facebook.com/groups/956912811789726',
   },
   {
     title: 'YouTube',
-    link: '',
+    link: 'https://www.youtube.com/@openipc',
   },
   {
     title: 'OpenCollective',
-    link: '',
+    link: 'https://opencollective.com/openipc',
   },
 ];
