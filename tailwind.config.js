@@ -16,6 +16,7 @@ export default {
         'btn-blue-click': '#283593',
         'light-blue': '#b7bfef',
         'action-blue': '#052c65',
+        'text-blue': '#0e6efd',
         'grey': '#9e9e9e',
         'grey-bg': '#f8f9fa',
         'white': '#fff',
