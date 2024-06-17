@@ -1,9 +1,13 @@
-import { SoCListProps } from './types';
+import { SoCManagedListProps } from '../soc-managed-list/types';
 import { SoCItemSpecificConstants } from '../soc-list-item/constants';
 import SoCListItem from '../soc-list-item/soc-list-item';
 
+type SoCListProps = {
+  list: SoCManagedListProps['fullList'],
+}
+
 export default function SoCList(props: SoCListProps) {
-  const { list } = props; 
+  const { list }= props; 
 
   return (
     <ul className="flex flex-col gap-y-2">
