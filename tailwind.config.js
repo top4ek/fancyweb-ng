@@ -27,6 +27,8 @@ export default {
         'wallet-bg': '#f8f9fa',
         'wallet-border': '#d2d2d2',
         'crimson': '#ff4785',
+        'stages-bg': '#cff4fc',
+        'stages-border': '#9eeaf9',
       },
     },
   },
