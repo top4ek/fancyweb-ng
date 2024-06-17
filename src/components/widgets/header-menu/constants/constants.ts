@@ -5,7 +5,7 @@ export const headerMenuConstants = [
   },
   {
     title: 'Supported Hardware',
-    link: '/supported-Hardware',
+    link: '/supported-hardware',
   },
   {
     title: 'It\'s Open Source',
