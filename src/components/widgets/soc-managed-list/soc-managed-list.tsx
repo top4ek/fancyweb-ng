@@ -3,6 +3,7 @@ import AbcSelector from '../abc-selector/abc-selector';
 import VendorsList from '../vendors-list/vendors-list';
 import SoCList from '../soc-list/soc-list';
 import {useState} from 'preact/hooks';
+import FirmwareDevStages from '../firmware-dev-stages';
 
 const SoCManagedList = (props: SoCManagedListProps) => {
   const { fullList } = props;
@@ -74,7 +75,14 @@ const SoCManagedList = (props: SoCManagedListProps) => {
     <div className="flex flex-col justify-start items-start gap-4 overflow-hidden">
       <AbcSelector letters={letters} curSelected={filterState.abcSelector} clickHandler={handleLetterClick}/>
       <VendorsList list={getVendorsList(filterState, fullList)} clickHandler={handleVendorClick} curSelected={filterState.vendorSelector} />
-      <SoCList list={getSoCsList(filterState, fullList)} />
+      <div className="flex flex-col gap-4 md:flex-row">
+        <div className="grow-[6] shrink-[6] basis-[60%]">
+          <SoCList list={getSoCsList(filterState, fullList)} />
+        </div>
+        <div className="grow-[3] shrink-[3] basis-[30%]">
+          <FirmwareDevStages />
+        </div>
+      </div>
     </div>
   );
 }

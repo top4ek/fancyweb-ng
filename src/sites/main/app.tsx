@@ -3,6 +3,7 @@ import Footer from '../../components/widgets/footer/footer';
 import Router from 'preact-router';
 import Introduction from './pages/introduction';
 import SupportOpenSource from './pages/support-open-source';
+import SupportedHardware from './pages/supported-hardware/supported-hardware';
 import OurTeam from './pages/our-team/';
 import OpenWall from './pages/open-wall';
 import DonateBanner from '../../components/widgets/donate-banner/donate-banner';
@@ -18,6 +19,7 @@ export function App() {
             <Introduction path="/" />
             <Introduction path="/introduction" />
             <SupportOpenSource path="/support-open-source" />
+            <SupportedHardware path="/supported-hardware" />
             <OurTeam path="/our-team" />
             <OpenWall path="/open-wall" />
           </Router>
