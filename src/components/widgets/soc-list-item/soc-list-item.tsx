@@ -1,9 +1,9 @@
-import { SoCItemProps } from './types';
+import { SoCItem as SoCItemProps} from '../soc-managed-list/types';
 import { SoCItemSpecificConstants, installationAlternatives } from './constants';
 import SoCIcons from '../../../assets/icons/socs-info';
 
 export default function SoCListItem(props: SoCItemProps) {
-  const { model, address, stage, installation } = props;
+  const { vendor, model, address, stage, installation } = props;
   const StageIcon = SoCIcons[stage];
 
   return (
@@ -12,7 +12,7 @@ export default function SoCListItem(props: SoCItemProps) {
         {SoCItemSpecificConstants.SoCCellTitle}
       </p>
       <p className="col-start-1 col-end-4 row-start-2 row-end-3 bg-wallet-bg mb-1 mr-1 pb-1 text-center md:min-w-56 md:shrink-0 md:grow-[3] md:basis-0 md:text-left md:m-0 md:p-0 md:pl-2 md:content-center">
-        {model}
+        {`${vendor} ${model}`}
       </p>
       <p className="col-start-4 col-end-6 row-start-1 row-end-2 bg-wallet-bg pt-1 font-medium text-center md:hidden">
         {SoCItemSpecificConstants.addressCellTitle}
@@ -31,7 +31,7 @@ export default function SoCListItem(props: SoCItemProps) {
       </p>
       <p className="col-start-2 col-end-6 row-start-4 row-end-5 pb-1 bg-wallet-bg text-center md:min-w-72 md:text-left md:shrink-0 md:grow-[4] md:basis-0 md:p-0 md:pl-2 md:content-center">
         {installation
-          ? <a className="text-brand-blue hover:text-btn-blue-hover" href={installation}>{installationAlternatives.yes}</a>
+          ? <a className="text-brand-blue hover:text-btn-blue-hover" href={`https://openipc.org/supported-hardware/${vendor}/${model}`}>{installationAlternatives.yes}</a>
           : installationAlternatives.no
         }
       </p>
