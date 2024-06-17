@@ -10,7 +10,7 @@ export default function SoCList(props: SoCListProps) {
   const { list }= props; 
 
   return (
-    <ul className="flex flex-col gap-y-2">
+    <ul className="flex flex-col gap-y-2 self-stretch">
       <li className="hidden font-medium md:flex md: flex-row md:flex-nowrap md:border-0 md:border-0 md:gap-x-1 md:min-h-11">
         <p className="col-start-1 col-end-4 row-start-2 row-end-3 bg-wallet-bg mb-1 mr-1 pb-1 text-center md:min-w-56 md:shrink-0 md:grow-[3] md:basis-0 md:text-left md:m-0 md:p-0 md:pl-2 md:content-center">
           {SoCItemSpecificConstants.SoCCellTitle}

@@ -40,8 +40,21 @@ export default function Paragraph(props: ParagraphProps) {
     return size ? fab[size]() : fab['normal'](); 
   };
 
+  const iconDtStyle = () => 'flex flex-row items-center gap-x-2 text-base font-bold *:w-[33px] *:h-[22px]';
+
   const hStyle = 'text-base font-bold';
   const pStyle = getPStyle(size);
+
+  if (typeof content === 'object' && Object.hasOwn(content, 'icon')) {
+    console.log('Paragraph with icon');
+    const { icon: Icon } = content;
+    return (
+      <>
+        {typeof content === 'object' && ( content.dl ? <dt className={iconDtStyle()}><Icon />{content.h}</dt> : <h3 className={hStyle}>{content.h}</h3>)}
+        {typeof content === 'object' && ( content.dl ? <dd className={pStyle}>{pText(text)}</dd> : <p className={pStyle}>{pText(text)}</p>)}
+      </>
+    );
+  }
 
   return (
     <>
