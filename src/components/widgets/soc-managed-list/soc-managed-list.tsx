@@ -71,7 +71,7 @@ const SoCManagedList = (props: SoCManagedListProps) => {
   };
 
   return (
-    <div className="flex flex-col justify-start items-start gap-4 border">
+    <div className="flex flex-col justify-start items-start gap-4 overflow-hidden">
       <AbcSelector letters={letters} curSelected={filterState.abcSelector} clickHandler={handleLetterClick}/>
       <VendorsList list={getVendorsList(filterState, fullList)} clickHandler={handleVendorClick} curSelected={filterState.vendorSelector} />
       <SoCList list={getSoCsList(filterState, fullList)} />

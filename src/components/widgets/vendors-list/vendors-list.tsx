@@ -13,13 +13,15 @@ export default function VendorsList(props: vendorsListProps) {
   }
 
   return (
-      <ul className="pb-2 flex flex-row flex-nowrap overflow-x-auto text-sm text-text-blue">
+    <div className="max-w-full overflow-x-auto">
+      <ul className="pb-2 flex flex-row flex-nowrap text-sm text-text-blue">
         {list.map((vendor: string) => (
-          <li className={`p-[7px] border-[1px] text-nowrap border rounded-t border-transparent border-b-grey relative ${curSelected && vendor.toLowerCase() === curSelected.toLowerCase() && 'border-b-white border-x-grey border-t-grey *:border-0 hover:text-btn-blue-hover'} hover:border-b-white hover:border-x-grey hover:border-t-grey hover:cursor-pointer *:hover:border-0 hover:text-btn-blue-hover`} onClick={handleClick}>
+          <li className={`p-[6px] border-[1px] text-nowrap border rounded-t border-transparent border-b-grey relative ${curSelected && vendor.toLowerCase() === curSelected.toLowerCase() && 'border-b-white border-x-grey border-t-grey *:border-0 hover:text-btn-blue-hover'} hover:border-b-white hover:border-x-grey hover:border-t-grey hover:cursor-pointer *:hover:border-0 hover:text-btn-blue-hover`} onClick={handleClick}>
             <div className="w-[3px] h-[2px] border-[1px] border-transparent border-b-grey absolute -bottom-[1px] -right-[2px]"></div>
             <span>{vendor}</span>
           </li>
         ))}
       </ul>
+    </div>
   );
 }
