@@ -6,6 +6,7 @@ import logo from './logo.svg?react';
 import coin from './coin.svg?react';
 import openCollective from './open-collective.svg?react';
 import cameraPreloader from './camera-preloader.svg?react';
+import Atom from './atom.svg?react';
 
 export default {
   Burger: burger,
@@ -15,4 +16,5 @@ export default {
   Coin: coin,
   OpenCollective: openCollective,
   CameraPreloader: cameraPreloader,
+  Atom,
 }
