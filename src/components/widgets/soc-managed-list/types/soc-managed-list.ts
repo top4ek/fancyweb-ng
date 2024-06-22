@@ -1,9 +1,11 @@
 export type SoCItem = {
   vendor: string,
+  group: string,
   model: string,
   address: null | string,
   stage: 'NEQ' | 'RND' | 'HLP' | 'WIP' | 'MVP' | 'DONE',
-  installation: boolean,
+  bootloader: string,
+  firmware: string,
   featured: boolean,
 }
 
