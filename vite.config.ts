@@ -43,7 +43,7 @@ export default defineConfig((args) => {
         return {
           root: "./src/sites/main",
           build: {
-            outDir: '../dist/main',
+            outDir: '../../../dist/main',
             emptyOutDir: true,
           },
           plugins: [preact(), svgr(svgrOpts)],
