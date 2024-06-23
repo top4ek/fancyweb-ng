@@ -208,7 +208,7 @@ export const socs: SoCItem[] = [
 		stage: 'DONE',
 		bootloader: 'u-boot-gk7205v200-universal.bin',
 		firmware: 'openipc.gk7205v200-nor-lite.tgz',
-		featured: false,
+		featured: true,
 	},
 	{
 		vendor: 'Goke',
@@ -218,7 +218,7 @@ export const socs: SoCItem[] = [
 		stage: 'DONE',
 		bootloader: 'u-boot-gk7205v200-universal.bin',
 		firmware: 'openipc.gk7205v210-nor-lite.tgz',
-		featured: false,
+		featured: true,
 	},
 	{
 		vendor: 'Goke',
@@ -228,7 +228,7 @@ export const socs: SoCItem[] = [
 		stage: 'DONE',
 		bootloader: 'u-boot-gk7205v300-universal.bin',
 		firmware: 'openipc.gk7205v300-nor-lite.tgz',
-		featured: false,
+		featured: true,
 	},
 	{
 		vendor: 'Goke',
@@ -378,7 +378,7 @@ export const socs: SoCItem[] = [
 		stage: 'DONE',
 		bootloader: 'u-boot-hi3516ev200-universal.bin',
 		firmware: 'openipc.hi3516ev200-nor-lite.tgz',
-		featured: false,
+		featured: true,
 	},
 	{
 		vendor: 'HiSilicon',
@@ -388,7 +388,7 @@ export const socs: SoCItem[] = [
 		stage: 'DONE',
 		bootloader: 'u-boot-hi3516ev300-universal.bin',
 		firmware: 'openipc.hi3516ev300-nor-lite.tgz',
-		featured: false,
+		featured: true,
 	},
 	{
 		vendor: 'HiSilicon',
@@ -578,7 +578,7 @@ export const socs: SoCItem[] = [
 		stage: 'DONE',
 		bootloader: 'u-boot-ssc335-nor.bin',
 		firmware: 'openipc.ssc335-nor-lite.tgz',
-		featured: false,
+		featured: true,
 	},
 	{
 		vendor: 'SigmaStar',
@@ -588,7 +588,7 @@ export const socs: SoCItem[] = [
 		stage: 'DONE',
 		bootloader: 'u-boot-ssc335de-nor.bin',
 		firmware: 'openipc.ssc335de-nor-lite.tgz',
-		featured: false,
+		featured: true,
 	},
 	{
 		vendor: 'SigmaStar',
@@ -598,7 +598,7 @@ export const socs: SoCItem[] = [
 		stage: 'DONE',
 		bootloader: 'u-boot-ssc337-nor.bin',
 		firmware: 'openipc.ssc337-nor-lite.tgz',
-		featured: false,
+		featured: true,
 	},
 	{
 		vendor: 'SigmaStar',
@@ -608,7 +608,7 @@ export const socs: SoCItem[] = [
 		stage: 'DONE',
 		bootloader: 'u-boot-ssc337de-nor.bin',
 		firmware: 'openipc.ssc337de-nor-lite.tgz',
-		featured: false,
+		featured: true,
 	},
 	{
 		vendor: 'Xiongmai',
@@ -708,7 +708,7 @@ export const socs: SoCItem[] = [
 		stage: 'DONE',
 		bootloader: 'u-boot-t31l-nor.bin',
 		firmware: 'openipc.t31-nor-lite.tgz',
-		featured: false,
+		featured: true,
 	},
 	{
 		vendor: 'Ingenic',
@@ -718,7 +718,7 @@ export const socs: SoCItem[] = [
 		stage: 'DONE',
 		bootloader: 'u-boot-t31n-nor.bin',
 		firmware: 'openipc.t31-nor-lite.tgz',
-		featured: false,
+		featured: true,
 	},
 	{
 		vendor: 'Ingenic',
@@ -728,7 +728,7 @@ export const socs: SoCItem[] = [
 		stage: 'DONE',
 		bootloader: 'u-boot-t31x-nor.bin',
 		firmware: 'openipc.t31-nor-lite.tgz',
-		featured: false,
+		featured: true,
 	},
 	{
 		vendor: 'TI',
@@ -838,7 +838,7 @@ export const socs: SoCItem[] = [
 		stage: 'DONE',
 		bootloader: 'u-boot-ssc30kq-nor.bin',
 		firmware: 'openipc.ssc30kq-nor-lite.tgz',
-		featured: false,
+		featured: true,
 	},
 	{
 		vendor: 'Ingenic',
@@ -988,7 +988,7 @@ export const socs: SoCItem[] = [
 		stage: 'DONE',
 		bootloader: 'u-boot-ssc30kd-nor.bin',
 		firmware: 'openipc.ssc30kd-nor-lite.tgz',
-		featured: false,
+		featured: true,
 	},
 	{
 		vendor: 'SigmaStar',
