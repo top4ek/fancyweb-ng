@@ -798,7 +798,7 @@ export const socs: SoCItem[] = [
 		stage: 'DONE',
 		bootloader: 'u-boot-ssc338q-nor.bin',
 		firmware: 'openipc.ssc338q-nor-lite.tgz',
-		featured: false,
+		featured: true,
 	},
 	{
 		vendor: 'Ingenic',
