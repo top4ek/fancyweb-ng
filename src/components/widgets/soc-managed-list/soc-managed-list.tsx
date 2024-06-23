@@ -67,6 +67,10 @@ const SoCManagedList = (props: SoCManagedListProps) => {
       if (abcSelector === 'Recommended') return sortByModelDesc(fullList.filter(soc => soc.featured));
       return sortByModelDesc(fullList.filter(soc => soc.vendor.charAt(0).toLowerCase() === abcSelector.toLowerCase()));
     }
+    if (abcSelector === 'Recommended') {
+      return sortByModelDesc(fullList.filter(soc => soc.featured && soc.vendor.toLowerCase() === vendorSelector?.toLowerCase()));
+    }
+
     return sortByModelDesc(fullList.filter(soc => soc.vendor.toLowerCase() === vendorSelector?.toLowerCase()));
 
   };
