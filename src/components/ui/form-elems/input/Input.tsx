@@ -3,10 +3,10 @@ import type { InputProps } from './Input-types';
 
 const Input:FunctionComponent<InputProps> = (props) => {
   const {
-    elemName, type, label, 
-    required, value, placeholder,
+    elemName, type, label, state,
+    onInput, required, value, placeholder,
     Icon, iconClickHandler, iconPlace,
-    iconToooltip, state, errorText, description
+    iconToooltip, errorText, description
   } = props;
 
   const getUnderInputText = (errorText?: string, description?: string) => {
@@ -44,7 +44,7 @@ const Input:FunctionComponent<InputProps> = (props) => {
       <div className="relative my-1">
         <input className={`${inputStyleFab(state)} ${Icon && getIconPaddings(iconPlace)}`} disabled={state === 'disabled'}
           type={type} id={elemName} name={elemName} {...(placeholder && { placeholder })}
-          {...(value && { value })} required={required}
+          {...(value && { value })} required={required} onInput={onInput}
         />
         {Icon && <div className={getIconStyle(iconPlace)} onClick={iconClickHandler}><Icon /></div>}
       </div>
