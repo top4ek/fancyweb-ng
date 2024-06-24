@@ -1,1 +1,1 @@
-export * as default from './header-menu';
+export { default } from './Header-menu';

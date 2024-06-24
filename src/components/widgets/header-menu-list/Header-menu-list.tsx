@@ -3,7 +3,7 @@ import HeaderMenuLink from './components/header-menu-link/header-menu-link';
 import HeaderMenuButton from './components/header-menu-button/header-menu-button';
 
 
-export default function HeaderMenu(props: HeaderMenuProps) {
+export default function HeaderMenuList(props: HeaderMenuProps) {
   const { list, isMobMenuVisible } = props;
 
   return (
