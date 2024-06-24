@@ -1,4 +1,5 @@
-import Header from '../../components/widgets/header/header';
+import Header from '../../components/widgets/header';
+import HeaderMenu from '../../components/widgets/header-menu';
 import Footer from '../../components/widgets/footer/footer';
 import Router from 'preact-router';
 import Introduction from './pages/introduction';
@@ -7,12 +8,15 @@ import SupportedHardware from './pages/supported-hardware/supported-hardware';
 import OurTeam from './pages/our-team/';
 import OpenWall from './pages/open-wall';
 import DonateBanner from '../../components/widgets/donate-banner/donate-banner';
+import { headerMenuConstants } from './constants'; 
 import './index.css';
 
 export function App() {
   return (
     <>
-      <Header />
+      <Header>
+        <HeaderMenu list={headerMenuConstants} />
+      </Header>
       <main class="flex-auto mx-4 flex flex-col justify-start items-center">
         <div className="max-w-[1240px] w-full">
           <Router>

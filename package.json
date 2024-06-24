@@ -7,6 +7,7 @@
   "scripts": {
     "dev-camera": "vite --mode='camera'",
     "dev-main": "vite --mode='main'",
+    "dev-fpv": "vite --mode='fpv'",
     "build": "vite build --mode='main'",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
