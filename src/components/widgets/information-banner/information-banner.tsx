@@ -1,13 +1,19 @@
-import {FunctionComponent} from 'preact';
 import Paragraph from '../paragraph/paragraph';
-import { InformationBannerProps } from './types';
+import type { InformationBannerProps } from './information-type';
 
-const InformationBanner: FunctionComponent<InformationBannerProps> = ({ content }) => {
+export default function InformationBanner({ content, type }: InformationBannerProps) {
+
+  function getColorStyle(type: NonNullable<InformationBannerProps['type']>) {
+    const stylesFab: Record<NonNullable<InformationBannerProps['type']>, () => void> = {
+      'information': () => 'text-info-text bg-stages-bg border-stages-border',
+      'warning': () => 'text-warning-text bg-warning-bg border-warning-border'
+    };
+    return stylesFab[type]();
+  }
+
   return (
-    <div className="border rounded p-4 flex flex-col gap-y-4 bg-stages-bg border-stages-border">
+    <div className={`border rounded p-4 flex flex-col gap-y-4 ${type ? getColorStyle(type) : getColorStyle('information')}`}>
       <Paragraph content={content} />
     </div>
   );
 }
-
-export default InformationBanner;
