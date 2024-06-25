@@ -21,13 +21,23 @@ export function App() {
               <div className="pb-2">
                 <H2 content={h2_1} />
               </div>
-              <Paragraph content={genRes.p1} />
+              <dl className="[&>*:nth-child(even)]:pb-4">
+                <Paragraph content={genRes.p1} />
+                <Paragraph content={genRes.p2} />
+                <Paragraph content={genRes.p3} />
+                <Paragraph content={genRes.p4} />
+                <Paragraph content={genRes.p5} />
+              </dl>
             </div>
             <div className="grow basis-2/4">
               <div className="pb-2">
                 <H2 content={h2_2} />
               </div>
-              <Paragraph content={projects.p1} />
+              <dl className="[&>*:nth-child(even)]:pb-4">
+                <Paragraph content={projects.p1} />
+                <Paragraph content={projects.p2} />
+                <Paragraph content={projects.p3} />
+              </dl>
             </div>
           </div>
         </div>
