@@ -1,15 +1,27 @@
-import { FunctionComponent } from 'preact';
-import Input from '../../ui/form-elems/input';
-import icons from '../../../assets/icons/ui';
+import Input from '../../../../../../components/ui/form-elems/input';
+import Select from '../../../../../../components/ui/form-elems/select/Select';
+import icons from '../../../../../../assets/icons/ui';
 import {useState} from 'preact/hooks';
-import { generateRandomMacAddress } from '../../../utils';
+import { generateRandomMacAddress } from '../../../../../../utils';
 
 const { Atom } = icons;
 
-const InstallationGuideForm:FunctionComponent = () => {
+export default function  InstallationGuideForm() {
   const [macAddrValue, setMacAddrValue] = useState('');
   const [ipAddrValue, setIpAddrValue] = useState('192.168.1.10');
   const [tftpAddrValue, setTftpAddrValue] = useState('192.168.1.254');
+
+  const memChipOpts = [{ value: 'NOR 8M' }, { value: 'NOR 16M' }, { value: 'NOR 32M' }, { value: 'NAND' }];
+  const firmwareVersOpts = [{ value: 'Lite' }, { value: 'Ultimate', disabled: true }, { value: 'FPV' }, { value: 'Rubyfpv' }, { value: 'VENC' }];
+  const netIfacesOpts = [
+    { value: 'Camera has only Ethernet interface' },
+    { value: 'Camera has only wireless interface' },
+    { value: 'Camera has both Ethernet and wireless interfaces' }
+  ];
+  const sdCardSlotsOpts = [
+    { value: 'Camera does not have an SD card slot' },
+    { value: 'Camera has an SD card slot' },
+  ];
 
   const handleMacOnInput = (e: Event) => {
     if (e.target instanceof HTMLInputElement) {
@@ -45,14 +57,17 @@ const InstallationGuideForm:FunctionComponent = () => {
       <Input elemName="ip-address" type="text" label="Camera IP address" required={true}
         state="default" placeholder="192.168.1.10" value={ipAddrValue}
         onInput={handleIpOnInput}
-
       />
       <Input elemName="tftp-address" type="text" label="TFTP server IP address" required={true}
         state="default" placeholder="192.168.1.254" value={tftpAddrValue}
         onInput={handleTftpOnInput}
       />
+      <Select elemName="mem-chip" label="Type and size of flash memory chip" required={true}
+        description="If you are not sure, select NOR 8M" options={memChipOpts}
+      />
+      <Select elemName="firmware-ver" label="Firmware version" options={firmwareVersOpts} />
+      <Select elemName="net-ifaces" label="Network interface" options={netIfacesOpts} />
+      <Select elemName="sd-card" label="SD card slot" options={sdCardSlotsOpts} />
     </form>
   );
 }
-
-export default InstallationGuideForm;

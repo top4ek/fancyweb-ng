@@ -1,7 +1,6 @@
-import { FunctionComponent } from 'preact';
 import type { InputProps } from './Input-types';
 
-const Input:FunctionComponent<InputProps> = (props) => {
+export default function Input(props: InputProps) {
   const {
     elemName, type, label, state,
     onInput, required, value, placeholder,
@@ -54,5 +53,3 @@ const Input:FunctionComponent<InputProps> = (props) => {
     </div>
   );
 }
-
-export default Input;
