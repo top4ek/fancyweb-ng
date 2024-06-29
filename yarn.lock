@@ -5329,7 +5329,8 @@ __metadata:
     express: "npm:^4.19.2"
     postcss: "npm:^8.4.38"
     preact: "npm:^10.19.6"
-    preact-router: "npm:^4.1.2"
+    preact-iso: "npm:^2.6.3"
+    preact-render-to-string: "npm:^6.5.5"
     storybook: "npm:^8.1.2"
     tailwindcss: "npm:^3.4.3"
     typescript: "npm:^5.2.2"
@@ -7761,12 +7762,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"preact-router@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "preact-router@npm:4.1.2"
+"preact-iso@npm:^2.6.3":
+  version: 2.6.3
+  resolution: "preact-iso@npm:2.6.3"
   peerDependencies:
     preact: ">=10"
-  checksum: 10c0/9f16949aafcc7c8d294da6dd06f8c8bcb8f523724b979f7ca674879178448ca53d692ae8f99013662189aa4115517f5675386524d329e492eb662124ab592a18
+    preact-render-to-string: ">=6.4.0"
+  checksum: 10c0/dbc6526ed7f528468b3f250d9525a70c7c241f916a91fe4b71fe78218c511a4706e9b9d55b96385ce7f2b0c85cdc3fe84c7e1296a5d1200cc3695b894315b87c
+  languageName: node
+  linkType: hard
+
+"preact-render-to-string@npm:^6.5.5":
+  version: 6.5.5
+  resolution: "preact-render-to-string@npm:6.5.5"
+  peerDependencies:
+    preact: ">=10"
+  checksum: 10c0/563bf0c45c4a6b91cfb81a3f35546ee4dbd4bca7f301f0824f41c37a4a05e71f69ca6bb4735302ef2b31d412bea55bc88ebca49ea4955485c1776b5f7c17e700
   languageName: node
   linkType: hard
 

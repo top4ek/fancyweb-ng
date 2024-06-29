@@ -38,7 +38,7 @@ export default function Input(props: InputProps) {
   }
 
   return (
-    <div>
+    <div className="w-full">
       <label for={elemName} className="text-sm">{label}{required && <span className="pl-1 text-crimson">*</span>}</label>
       <div className="relative my-1">
         <input className={`${inputStyleFab(state)} ${Icon && getIconPaddings(iconPlace)}`} disabled={state === 'disabled'}

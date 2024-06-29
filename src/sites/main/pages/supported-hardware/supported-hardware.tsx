@@ -1,10 +1,9 @@
-import { FunctionComponent } from 'preact';
 import InformationBanner from '../../../../components/widgets/information-banner';
 import H1 from '../../../../components/ui/headers/h1/h1';
 import SoCManagedList from '../../../../components/widgets/soc-managed-list';
 import { supportedHardwareConstants, socs } from './constants';
 
-export const SupportedHardware:FunctionComponent = () => {
+export default function SupportedHardware() {
   return (
     <>
       <div className="py-4">
@@ -19,5 +18,3 @@ export const SupportedHardware:FunctionComponent = () => {
     </>
   );
 }
-
-export default SupportedHardware;
