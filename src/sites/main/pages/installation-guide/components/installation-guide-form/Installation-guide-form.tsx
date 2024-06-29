@@ -1,6 +1,7 @@
 import Input from '../../../../../../components/ui/form-elems/input';
 import Select from '../../../../../../components/ui/form-elems/select/Select';
 import icons from '../../../../../../assets/icons/ui';
+import MainButton from '../../../../../../components/ui/buttons/main-button';
 import {useState} from 'preact/hooks';
 import { generateRandomMacAddress } from '../../../../../../utils';
 
@@ -49,7 +50,7 @@ export default function  InstallationGuideForm() {
   }
 
   return (
-    <form>
+    <form className="flex flex-col gap-y-3 max-w-96 items-center">
       <Input elemName="mac-address" type="text" label="Camera MAC address" required={true}
         state="default" placeholder="ff:ff:ff:ff:ff:ff" Icon={Atom} value={macAddrValue}
         onInput={handleMacOnInput} iconClickHandler={handleGenMacAddrIconClick}
@@ -68,6 +69,9 @@ export default function  InstallationGuideForm() {
       <Select elemName="firmware-ver" label="Firmware version" options={firmwareVersOpts} />
       <Select elemName="net-ifaces" label="Network interface" options={netIfacesOpts} />
       <Select elemName="sd-card" label="SD card slot" options={sdCardSlotsOpts} />
+      <div className="pt-4 pb-2">
+        <MainButton type='submit' caption="Generate Installation Guide" /> 
+      </div>
     </form>
   );
 }
