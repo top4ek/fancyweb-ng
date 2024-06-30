@@ -44,7 +44,7 @@ export const headerMenuConstants = [
       },
       {
         title: 'Majestic Endpoints',
-        link: 'majestic-endpoints',
+        link: '/majestic-endpoints',
       },
       {
         title: 'Our Wiki',
@@ -61,15 +61,15 @@ export const headerMenuConstants = [
       },
       {
         title: 'High-Resolution Timer',
-        link: 'high-resolution-timer',
+        link: '/high-resolution-timer',
       },
       {
         title: 'QR Code Generator',
-        link: 'qr-code-generator',
+        link: '/tools/qr-code-generator',
       },
       {
         title: 'Utilities',
-        link: 'utilities',
+        link: '/utilities',
       },
     ],
   },

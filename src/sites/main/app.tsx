@@ -5,8 +5,9 @@ import Introduction from './pages/introduction';
 import SupportOpenSource from './pages/support-open-source';
 import SupportedHardware from './pages/supported-hardware/supported-hardware';
 import InstallationGuide from './pages/installation-guide';
-import OurTeam from './pages/our-team/';
+import OurTeam from './pages/about/our-team/';
 import OpenWall from './pages/open-wall';
+import QRCode from './pages/tools/qr-code';
 import DonateBanner from '../../components/widgets/donate-banner/donate-banner';
 import { headerMenuConstants } from './constants'; 
 import { LocationProvider, ErrorBoundary, Router, Route } from 'preact-iso';
@@ -29,7 +30,8 @@ export function App() {
                 <Route path="/supported-hardware" component={SupportedHardware} />
                 <Route path="/supported-hardware/:vendor/:model" component={InstallationGuide} />
                 <Route path="/our-team" component={OurTeam} />
-                <Route path="/open-wall" component={OpenWall}/>
+                <Route path="/open-wall" component={OpenWall} />
+                <Route path="/tools/qr-code-generator" component={QRCode} />
               </Router>
             </ErrorBoundary>
           </LocationProvider>
