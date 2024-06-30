@@ -1,7 +1,7 @@
-import H1 from '../../../../components/ui/headers/h1';
-import H2 from '../../../../components/ui/headers/h2';
-import Paragraph from '../../../../components/widgets/paragraph';
-import Team from '../../../../components/widgets/team';
+import H1 from '../../../../../components/ui/headers/h1';
+import H2 from '../../../../../components/ui/headers/h2';
+import Paragraph from '../../../../../components/widgets/paragraph';
+import Team from '../../../../../components/widgets/team';
 import { ourTeamConstants, IPCCoreConstants, URLLCandFPVConstants } from './constants';
 
 export default function OurTeam() {
