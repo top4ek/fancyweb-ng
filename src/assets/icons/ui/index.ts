@@ -7,6 +7,8 @@ import coin from './coin.svg?react';
 import openCollective from './open-collective.svg?react';
 import cameraPreloader from './camera-preloader.svg?react';
 import Atom from './atom.svg?react';
+import ShowPassword from './show-password.svg?react';
+import HidePassword from './hide-password.svg?react';
 
 export default {
   Burger: burger,
@@ -17,4 +19,6 @@ export default {
   OpenCollective: openCollective,
   CameraPreloader: cameraPreloader,
   Atom,
+  ShowPassword,
+  HidePassword,
 }

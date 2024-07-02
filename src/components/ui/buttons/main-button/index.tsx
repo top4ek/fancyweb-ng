@@ -1,1 +1,1 @@
-export { default } from './main-button.tsx';
+export { default } from './Main-button';

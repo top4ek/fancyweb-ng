@@ -27,7 +27,7 @@ export default function CameraSnapshot(props: CameraSnapshotProps) {
       resolution: '1920x1080',
       size: 84624,
     });
-    setTimeout(() => setLoading(false), 4000);
+    setTimeout(() => setLoading(false), 40000);
   })
 
   return (
