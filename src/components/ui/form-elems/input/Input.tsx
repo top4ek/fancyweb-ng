@@ -40,14 +40,14 @@ export default function Input(props: InputProps) {
   return (
     <div className="w-full">
       <label for={elemName} className="text-sm">{label}{required && <span className="pl-1 text-crimson">*</span>}</label>
-      <div className="relative my-1">
+      <div className="relative mt-1">
         <input className={`${inputStyleFab(state)} ${Icon && getIconPaddings(iconPlace)}`} disabled={state === 'disabled'}
           type={type} id={elemName} name={elemName} {...(placeholder && { placeholder })}
           {...(value && { value })} required={required} onInput={onInput}
         />
         {Icon && <div className={getIconStyle(iconPlace)} onClick={iconClickHandler}><Icon /></div>}
       </div>
-      <div>
+      <div className="leading-4 min-h-5">
         <span className={`text-sm ${state==='error' && errorText && 'text-red'}`}>{getUnderInputText(errorText, description)}</span>
       </div>
     </div>

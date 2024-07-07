@@ -1,1 +1,1 @@
-export { default } from './qr-code-form';
+export { default as QRCodeForm } from './qr-code-form';
