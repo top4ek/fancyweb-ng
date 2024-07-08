@@ -36,6 +36,8 @@ export default function QRCodeForm({ applyFormData }: { applyFormData: (formData
       <Input elemName="password" type={passInptType} label="Password" state={formElemsState.password.state} value={formElemsState.password.value}
         onInput={handleOnChange} Icon={passInptType === 'password' ? ShowPassword : HidePassword}
         iconPlace="right" iconClickHandler={handlePassInptIconClick} errorText={formElemsState.password.error}/>
+      <div className="pt-3">
+      </div>
       <MainButton type="submit" caption="Generate QR Code" />
     </form>
   );
