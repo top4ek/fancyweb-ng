@@ -13,7 +13,8 @@ type Story = StoryObj<typeof meta>;
 export const RadioStory: Story = {
   args: {
     name: 'qr-code-generator',
-    defaultChecked: 2,
+    defaultChecked: 1,
     captions: ['vCard', 'MeCard', 'OpenIPC'],
+    changeHandler: (caption: string) => console.log(caption),
   },
 }

@@ -48,7 +48,7 @@ export default function QRCode() {
         <div className="max-w-md p-2 border rounded shadow-md w-full sm:basis-[48%] lg:grow lg:basis-[10%]">
           <QRCodeForm applyFormData={applyFormData} />
         </div>
-        <div>
+        <div className="flex flex-col gap-2 items-center">
           <div className={`border border-2 rounded aspect-square bg-grey w-full max-w-80 sm:basis-[48%] sm:shrink ${curVisible === 'MeCard' ? 'block' : 'hidden'}`}>
             <QRCodeWidget textToCode={textToCode.MeCard} />
           </div>
