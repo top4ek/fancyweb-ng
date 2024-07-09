@@ -18,22 +18,12 @@ export default function<T extends string[]>({ name, defaultChecked, captions, ch
     }
   }
 
-  function getInputClass(caption: string) {
-    return 'peer absolute opacity-0';
-  }
-
-  function getLabelClass(caption: string) {
-    return `text-center min-w-24 flex flex-col justify-center cursor-pointer border-0 rounded peer-checked:bg-brand-blue peer-checked:text-white peer-[:not(:checked):hover]:bg-light-blue transition`;
-  }
-
   return (
     <ul className="border rounded min-h-8 flex flex-row items-center flex-nowrap max-w-min p-0.5 shadow-md">
       {captions.map((caption) => (
         <li className="relative">
-          <input name={name} value={caption} id={caption} checked={caption === checked} type="radio" onChange={handleChange}
-            className={getInputClass(caption)}
-          />
-          <label for={caption} className={getLabelClass(caption)}>
+          <input name={name} value={caption} id={caption} checked={caption === checked} type="radio" onChange={handleChange} className="peer absolute opacity-0" />
+          <label for={caption} className="text-center min-w-24 flex flex-col justify-center cursor-pointer border-0 rounded peer-checked:bg-brand-blue peer-checked:text-white peer-[:not(:checked):hover]:bg-light-blue transition">
             {caption}
           </label>
         </li>
