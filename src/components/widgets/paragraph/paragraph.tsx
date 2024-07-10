@@ -39,9 +39,19 @@ export default function Paragraph({ content, size }: ParagraphProps) {
     return size ? fab[size]() : fab['normal'](); 
   };
 
+  function getHStyle(size: Sizes | undefined) {
+    const baseStyle = 'font-bold';
+    const fab: Record<Sizes, () => string> = {
+      'big': () => `text-xl ${baseStyle}`,
+      'normal': () => `text-base ${baseStyle}`,
+      'small': () => `text-sm ${baseStyle}`,
+    };
+    return size ? fab[size]() : fab['normal'](); 
+  }
+
   const iconDtStyle = () => 'flex flex-row items-center gap-x-2 text-base font-bold *:w-[33px] *:h-[22px]';
 
-  const hStyle = 'text-base font-bold';
+  const hStyle = getHStyle(size);
   const pStyle = getPStyle(size);
 
   if (typeof content === 'object' && Object.hasOwn(content, 'icon')) {
