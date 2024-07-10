@@ -1,4 +1,4 @@
-import {useEffect, useState} from "preact/hooks";
+import { useState} from "preact/hooks";
 import type { RadioProps } from './radio-types';
 
 export default function<T extends string[]>({ name, defaultChecked, captions, changeHandler }: RadioProps<T>) {
@@ -8,12 +8,9 @@ export default function<T extends string[]>({ name, defaultChecked, captions, ch
 
   const [ checked, setChecked ] = useState(captions[defaultChecked]);
 
-  useEffect(() => console.log('Current checked:' ,checked), [checked]);
-
   function handleChange(e: Event) {
     if (e.target instanceof HTMLInputElement) {
       setChecked(e.target.value);
-      console.log(e.target.value);
       changeHandler(e.target.value);
     }
   }
