@@ -7,6 +7,7 @@ import SupportedHardware from './pages/supported-hardware/supported-hardware';
 import InstallationGuide from './pages/installation-guide';
 import OurTeam from './pages/about/our-team/';
 import OurProjects from './pages/about/our-projects';
+import OurSoftware from './pages/about/our-software';
 import OpenWall from './pages/open-wall';
 import QRCode from './pages/tools/qr-code';
 import DonateBanner from '../../components/widgets/donate-banner/donate-banner';
@@ -32,6 +33,7 @@ export function App() {
                 <Route path="/supported-hardware/:vendor/:model" component={InstallationGuide} />
                 <Route path="/our-team" component={OurTeam} />
                 <Route path="/our-projects" component={OurProjects} />
+                <Route path="/our-software" component={OurSoftware} />
                 <Route path="/open-wall" component={OpenWall} />
                 <Route path="/tools/qr-code-generator" component={QRCode} />
               </Router>
