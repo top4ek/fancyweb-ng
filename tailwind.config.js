@@ -18,6 +18,7 @@ export default {
         'action-blue': '#052c65',
         'text-blue': '#0e6efd',
         'input-bg-blue': '#BBDFF0',
+        'dark-grey': '#555555',
         'grey': '#9e9e9e',
         'grey-bg': '#f8f9fa',
         'white': '#fff',
