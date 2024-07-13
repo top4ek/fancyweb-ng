@@ -9,6 +9,7 @@ import OurTeam from './pages/about/our-team/';
 import OurProjects from './pages/about/our-projects';
 import OurSoftware from './pages/about/our-software';
 import GreenLife from './pages/about/green-life';
+import OurGroups from './pages/about/our-groups';
 import OpenWall from './pages/open-wall';
 import QRCode from './pages/tools/qr-code';
 import DonateBanner from '../../components/widgets/donate-banner/donate-banner';
@@ -36,6 +37,7 @@ export function App() {
                 <Route path="/our-projects" component={OurProjects} />
                 <Route path="/our-software" component={OurSoftware} />
                 <Route path="/green-life" component={GreenLife} />
+                <Route path="/our-telegram" component={OurGroups} />
                 <Route path="/open-wall" component={OpenWall} />
                 <Route path="/tools/qr-code-generator" component={QRCode} />
               </Router>
