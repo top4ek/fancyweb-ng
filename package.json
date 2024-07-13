@@ -8,7 +8,8 @@
     "dev-camera": "vite --mode='camera'",
     "dev-main": "vite --mode='main'",
     "dev-fpv": "vite --mode='fpv'",
-    "build": "vite build --mode='main'",
+    "build-main": "vite build --mode='main'",
+    "build-fpv": "vite build --mode='fpv'",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
