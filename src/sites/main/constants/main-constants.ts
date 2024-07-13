@@ -36,7 +36,7 @@ export const headerMenuConstants = [
       },
       {
         title: 'Our Telegram',
-        link: '/our-telegream',
+        link: '/our-telegram',
       },
       {
         title: 'Web Interface',

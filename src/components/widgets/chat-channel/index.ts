@@ -1,1 +1,1 @@
-export { default } from './Chat-widget';
+export { default } from './Chat-channel';
