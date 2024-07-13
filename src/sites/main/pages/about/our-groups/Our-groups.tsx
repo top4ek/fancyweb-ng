@@ -25,27 +25,27 @@ export default function OurGroups() {
           <p className="py-1">Did you know that Telegram Messenger allows you to use formatting to emphasize important parts of the message and make information easier to grasp?</p>
           <p>Select a text fragment and press a key combo:</p>
           <dl className="max-w-60 flex flex-col gap-y-2 pt-3">
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
               <dt className="text-sm font-bold min-w-32">Bold</dt>
               <dd className="flex flex-row gap-x-1"><WannabeKey caption="Ctrl" /><WannabeKey caption="B" /></dd>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
               <dt className="text-sm font-bold min-w-32">Italic</dt>
               <dd className="flex flex-row gap-x-1"><WannabeKey caption="Ctrl" /><WannabeKey caption="I" /></dd>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
               <dt className="text-sm font-bold min-w-32">Underline</dt>
               <dd className="flex flex-row gap-x-1"><WannabeKey caption="Ctrl" /><WannabeKey caption="U" /></dd>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
               <dt className="text-sm font-bold min-w-32">Strikeout</dt>
               <dd className="flex flex-row gap-x-1"><WannabeKey caption="Ctrl" /><WannabeKey caption="Shift" /><WannabeKey caption="X" /></dd>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
               <dt className="text-sm font-bold min-w-32">Monospace</dt>
               <dd className="flex flex-row gap-x-1"><WannabeKey caption="Ctrl" /><WannabeKey caption="Shift" /><WannabeKey caption="M" /></dd>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
               <dt className="text-sm font-bold min-w-32">Hyperlink</dt>
               <dd className="flex flex-row gap-x-1"><WannabeKey caption="Ctrl" /><WannabeKey caption="K" /></dd>
             </div>
