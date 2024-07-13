@@ -16,7 +16,7 @@ export function App() {
           <div className="pt-4 pb-8">
             <Paragraph content={advice} size='small' />
           </div>
-          <div className="flex flex-row gap-x-20">
+          <div className="flex flex-col sm:flex-row gap-x-20">
             <div className="grow basis-2/4">
               <div className="pb-2">
                 <H2 content={h2_1} />
