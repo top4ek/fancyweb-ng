@@ -92,7 +92,7 @@ export const majesticEndpointsConstants = {
     },
     {
       h: 'http://192.168.1.10/image.dng',
-      p: 'Snapshot in Adobe DNG format (raw).[^3](#fn3)',
+      p: 'Snapshot in Adobe DNG format (raw).[^5](#fn5)',
     },
   ],
   nightAPI: [
@@ -124,5 +124,7 @@ export const majesticEndpointsConstants = {
     'Only HiSilicon SoCs v2 and up.',
     'E.g. ffplay -ar 48000 -ac 1 -f s16le http://192.168.1.10/audio.pcm',
     'E.g. http://192.168.1.10/image.jpg?width=640&height=480&qfactor=50&color2gray=1&crop=80x32x512x400',
+    'https://en.wikipedia.org/wiki/Digital_Negative',
   ],
+  wikiLink: 'More examples available [in our wiki](https://github.com/OpenIPC/wiki/blob/master/en/majestic-streamer.md)',
 }
