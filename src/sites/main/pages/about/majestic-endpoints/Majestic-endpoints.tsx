@@ -1,5 +1,6 @@
 import H1 from '../../../../../components/ui/headers/h1';
 import H2 from '../../../../../components/ui/headers/h2';
+import Paragraph from '../../../../../components/widgets/paragraph/paragraph';
 import { majesticEndpointsConstants } from './constants';
 
 export default function MajesticEndpoints() {
@@ -127,6 +128,9 @@ export default function MajesticEndpoints() {
       <ul className="pt-6">
         {majesticEndpointsConstants.footnotes.map((el, i) => <li id={`fn${i+1}`} className="text-sm break-words">{i + 1}. {el}</li>)}
       </ul>
+      <div className="pt-6">
+        <Paragraph content={majesticEndpointsConstants.wikiLink} />
+      </div>
     </>
   );
 }
