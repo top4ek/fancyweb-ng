@@ -48,7 +48,7 @@ export const headerMenuConstants = [
       },
       {
         title: 'Our Wiki',
-        link: '/our-wiki',
+        link: 'https://github.com/openipc/wiki',
       },
     ],
   },
