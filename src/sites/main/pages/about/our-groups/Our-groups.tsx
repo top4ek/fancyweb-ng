@@ -3,10 +3,27 @@ import InformationBanner from '../../../../../components/widgets/information-ban
 import Paragraph from '../../../../../components/widgets/paragraph';
 import ChatChannel from '../../../../../components/widgets/chat-channel';
 import WannabeKey from '../../../../../components/widgets/wannabe-key';
+import ModalImage from '../../../../../components/widgets/modal-image';
 import telegramTranslation from '../../../../../assets/pics/telegram-translation.webp';
+import { useState } from 'preact/hooks';
 import { ourGroupsConstants } from './constants';
 
 export default function OurGroups() {
+  const pic = { pic: telegramTranslation, alt: 'Telegram translation example' };
+
+  const [ picToShow, setPicToShow ] = useState<{src: string, alt: string} | null>(null);
+  function handleImgClick(e: Event) {
+    if (e.target instanceof HTMLImageElement) {
+      const src = e.target.getAttribute('src');
+      const alt = e.target.getAttribute('alt');
+      if (src && alt) setPicToShow({ src, alt });
+    }
+  }
+
+  function closeModalImage() {
+    setPicToShow(null);
+  }
+
   return (
     <>
       <div className="py-4">
@@ -54,9 +71,10 @@ export default function OurGroups() {
         <div className="basis-1/2">
           <h2 className="text-xl text-brand-blue">Chat Translation</h2>
           <p className="py-1 pb-4">Did you know that Telegram messenger has a built-in translation engine that allows you to read messages written in foreign languages? Users with premium accounts can <a className="underline text-brand-blue" href="https://telegram.org/blog/profile-pics-emoji-translations#translating-entire-chats">translate entire chats</a> on the fly, but even a regular account can <a className="underline text-brand-blue" href="https://telegram.org/blog/reactions-spoilers-translations#message-translation">translate individual messages</a> with the click of a button.</p>
-          <img src={telegramTranslation} />
+          <img src={pic.pic} alt={pic.alt} className="hover:cursor-zoom-in" onClick={handleImgClick}/>
         </div>
       </div>
+      { picToShow && <ModalImage src={picToShow.src} alt={picToShow.alt} close={closeModalImage}/> }
     </>
   );
 }
