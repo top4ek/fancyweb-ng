@@ -23,7 +23,7 @@ export default function ModalImage({ src, alt, close }: { src: string, alt: stri
     return () => {
       document.removeEventListener("keyup", handleEscKeyPress)
       const scrollY = document.body.style.top;
-    document.body.style.width = '';
+      document.body.style.width = '';
       document.body.style.position = 'static';
       document.body.style.setProperty('padding-right', '0');
       document.body.style.top = '';
