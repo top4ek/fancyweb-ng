@@ -31,6 +31,12 @@ export default defineConfig((args) => {
           plugins: [preact(), svgr(svgrOpts)],
         }
       },
+      test: () => {
+        return {
+          root: "./src/utils",
+          server: serverOpts,
+        }
+      },
       fpv: () => {
         return {
           root: "./src/sites/fpv",
@@ -85,7 +91,7 @@ export default defineConfig((args) => {
   };
   if (
     command === 'serve' &&
-    (mode === 'main' || mode === 'camera' || mode === 'fpv' || mode === 'development')
+    (mode === 'main' || mode === 'camera' || mode === 'fpv' || mode === 'development' || mode === 'test')
   ) return config[command][mode]();
   if (
     command === 'build' &&
