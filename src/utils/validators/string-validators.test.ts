@@ -1,5 +1,13 @@
 import { expect, test } from 'vitest';
-import { isDigitsOnly, isValidMAC, isValidIP } from './string-validators';
+import { isNonEmpty, isDigitsOnly, isValidMAC, isValidIP } from './string-validators';
+
+test('Non empty string to equal true', () => {
+  expect(isNonEmpty('Non empty string')).toBe(true);
+});
+
+test('Empty string to equal false', () => {
+  expect(isNonEmpty('')).toBe(false);
+});
 
 test('123 to equal true', () => {
   expect(isDigitsOnly('123')).toBe(true);

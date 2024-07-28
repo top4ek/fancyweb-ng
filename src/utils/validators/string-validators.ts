@@ -1,3 +1,7 @@
+export function isNonEmpty(val: string) {
+  return !!val;
+}
+
 export function isDigitsOnly(val: string) {
   return /^\d+$/.test(val);
 }
