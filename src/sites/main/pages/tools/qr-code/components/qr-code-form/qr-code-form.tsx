@@ -8,7 +8,7 @@ import { QRCodeFormValidationSchema } from './form-validation-schema';
 
 export type FormDataType = Record<keyof typeof QRCodeFormSchema, string>; 
 
-export default function QRCodeForm({ applyFormData }: { applyFormData: (formData: FormDataType) => void}) {
+export default function QRCodeForm({ applyFormData }: { applyFormData: (formData: FormDataType) => void }) {
   const { ShowPassword, HidePassword } = icons;
 
   const [passInptType, setPassInptType] = useState('password');

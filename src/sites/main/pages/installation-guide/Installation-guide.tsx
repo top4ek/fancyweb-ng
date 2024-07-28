@@ -5,6 +5,7 @@ import { InstallationGuideForm } from './components/installation-guide-form';
 import { guide, saveFirmware } from './constants';
 import { useLocation } from 'preact-iso';
 import { socs } from '../supported-hardware/constants';
+import { FormDataType } from './components/installation-guide-form/Installation-guide-form';
 
 export default function InstallationGuide() {
   const location = useLocation();
@@ -14,6 +15,10 @@ export default function InstallationGuide() {
     model.toLowerCase() === curModel.toLowerCase()
   )[0];
   const Stage = stageIcons[stage];
+
+  function applyFormData(formData: FormDataType) {
+    console.log('Installation form data: ', formData);
+  }
 
   return (
     <>
@@ -28,7 +33,7 @@ export default function InstallationGuide() {
           <InformationBanner content={{h: guide.h, p: guide.p}} />
         </div>
         <div className="max-w-96 grow basis-1/3 border rounded p-2 shadow-md order-3 md:order-2">
-          <InstallationGuideForm />
+          <InstallationGuideForm applyFormData={applyFormData}/>
         </div>
         <div className="grow basis-1/3 order-2 md:order-3">
           <InformationBanner content={{h: saveFirmware.h, p: saveFirmware.p}} type="warning" />

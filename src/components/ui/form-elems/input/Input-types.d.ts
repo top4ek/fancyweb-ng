@@ -1,5 +1,4 @@
-import { FunctionComponent } from 'preact';
-import {ChangeEvent} from 'preact/compat';
+import { FunctionComponent, Ref } from 'preact';
 
 export type InputProps = {
   elemName: string,
@@ -11,7 +10,7 @@ export type InputProps = {
   value?: string,
   placeholder?: string,
   Icon?: FunctionComponent,
-  iconClickHandler?: (e: MouseEvent) => void,
+  iconClickHandler?: (elem: HTMLInputElement, e: Event) => void,
   iconPlace?: 'left' | 'right',
   iconToooltip?: string,
   errorText?: string,

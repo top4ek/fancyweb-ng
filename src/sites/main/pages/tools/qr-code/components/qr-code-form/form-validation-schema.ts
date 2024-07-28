@@ -1,14 +1,18 @@
+import informationBanner from "../../../../../../../components/widgets/information-banner"
+import {installationAlternatives} from "../../../../../../../components/widgets/soc-list-item/constants"
 import type { FormValidationSchema } from "../../../../../../../utils/hooks/useForm-types"
+import { isNonEmpty } from '../../../../../../../utils/validators'
+
 export const QRCodeFormValidationSchema: FormValidationSchema = {
   ssid: [
     {
-      fn: (value: string) => !!value,
+      fn: isNonEmpty,
       error: 'Required field',
     },
   ],
   password: [
     {
-      fn: (value: string) => !!value,
+      fn: isNonEmpty,
       error: 'Required field',
     },
     {

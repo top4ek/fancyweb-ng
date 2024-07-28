@@ -7,13 +7,14 @@ const meta = {
 } satisfies Meta<typeof Select>;
 
 export default meta;
+type Story = StoryObj<typeof Select>;
 
-type Story = StoryObj<typeof meta>;
-
-export const SelectStory: Story = {
+export const SelectStoryDefault: Story = {
   args: {
     elemName: 'memChip',
     label: 'Type and size of flash memory chip',
+    state: 'default',
+    onInput: (e: Event) => console.log(e.target),
     options: [{
       value: 'NOR 8M',
       disabled: false,
@@ -31,4 +32,79 @@ export const SelectStory: Story = {
     required: true,
     description: 'If you\'re not sure, select NOR 8M',
   },
-}
+} satisfies Story;
+
+export const SelectStoryValid: Story = {
+  args: {
+    elemName: 'memChip',
+    label: 'Type and size of flash memory chip',
+    state: 'valid',
+    onInput: (e: Event) => console.log(e.target),
+    options: [{
+      value: 'NOR 8M',
+      disabled: false,
+    },
+    {
+      value: 'NOR 16M',
+      disabled: true,
+    },
+    {
+      value: 'NOR 32M',
+    },
+    {
+      value: 'NAND'
+    }],
+    required: true,
+    description: 'If you\'re not sure, select NOR 8M',
+  },
+} satisfies Story;
+
+export const SelectStoryInvalid: Story = {
+  args: {
+    elemName: 'memChip',
+    label: 'Type and size of flash memory chip',
+    state: 'error',
+    onInput: (e: Event) => console.log(e.target),
+    options: [{
+      value: 'NOR 8M',
+      disabled: false,
+    },
+    {
+      value: 'NOR 16M',
+      disabled: true,
+    },
+    {
+      value: 'NOR 32M',
+    },
+    {
+      value: 'NAND'
+    }],
+    required: true,
+    description: 'If you\'re not sure, select NOR 8M',
+  },
+} satisfies Story;
+
+export const SelectStoryDisabled: Story = {
+  args: {
+    elemName: 'memChip',
+    label: 'Type and size of flash memory chip',
+    state: 'disabled',
+    onInput: (e: Event) => console.log(e.target),
+    options: [{
+      value: 'NOR 8M',
+      disabled: false,
+    },
+    {
+      value: 'NOR 16M',
+      disabled: true,
+    },
+    {
+      value: 'NOR 32M',
+    },
+    {
+      value: 'NAND'
+    }],
+    required: true,
+    description: 'If you\'re not sure, select NOR 8M',
+  },
+} satisfies Story;

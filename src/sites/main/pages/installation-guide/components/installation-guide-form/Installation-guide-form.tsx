@@ -2,73 +2,64 @@ import Input from '../../../../../../components/ui/form-elems/input';
 import Select from '../../../../../../components/ui/form-elems/select/Select';
 import icons from '../../../../../../assets/icons/ui';
 import MainButton from '../../../../../../components/ui/buttons/main-button';
-import {useState} from 'preact/hooks';
 import { generateRandomMacAddress } from '../../../../../../utils';
+import useForm from '../../../../../../utils/hooks/useForm';
+import { installationGuideFormSchema } from './form-schema';
+import { installationGuideFormValidationSchema } from './form-validation-schema';
+import { memChipOpts, firmwareVersOpts, netIfacesOpts, sdCardSlotsOpts } from '../../constants';
 
 const { Atom } = icons;
 
-export default function  InstallationGuideForm() {
-  const [macAddrValue, setMacAddrValue] = useState('');
-  const [ipAddrValue, setIpAddrValue] = useState('192.168.1.10');
-  const [tftpAddrValue, setTftpAddrValue] = useState('192.168.1.254');
+export type FormDataType = Record<keyof typeof installationGuideFormSchema, string>; 
 
-  const memChipOpts = [{ value: 'NOR 8M' }, { value: 'NOR 16M' }, { value: 'NOR 32M' }, { value: 'NAND' }];
-  const firmwareVersOpts = [{ value: 'Lite' }, { value: 'Ultimate', disabled: true }, { value: 'FPV' }, { value: 'Rubyfpv' }, { value: 'VENC' }];
-  const netIfacesOpts = [
-    { value: 'Camera has only Ethernet interface' },
-    { value: 'Camera has only wireless interface' },
-    { value: 'Camera has both Ethernet and wireless interfaces' }
-  ];
-  const sdCardSlotsOpts = [
-    { value: 'Camera does not have an SD card slot' },
-    { value: 'Camera has an SD card slot' },
-  ];
+export default function InstallationGuideForm({ applyFormData }: { applyFormData: (formData: FormDataType) => void }) {
+  const { handleOnChange, handelFormButtonClick, formElemsState, formState } = useForm(installationGuideFormSchema, installationGuideFormValidationSchema);
 
-  const handleMacOnInput = (e: Event) => {
-    if (e.target instanceof HTMLInputElement) {
-      const { value } = e.target;
-      setMacAddrValue(value);
-    }
+  function handleGenMacAddrIconClick(input: HTMLInputElement, _: Event) {
+    input.value = generateRandomMacAddress();
+    input.dispatchEvent(new Event('input'));
   }
 
-  const handleGenMacAddrIconClick = () => {
-    setMacAddrValue(generateRandomMacAddress());
-  }
-
-  const handleIpOnInput = (e: Event) => {
-    if (e.target instanceof HTMLInputElement) {
-      const { value } = e.target;
-      setIpAddrValue(value);
-    }
-  }
-
-  const handleTftpOnInput = (e: Event) => {
-    if (e.target instanceof HTMLInputElement) {
-      const { value } = e.target;
-      setTftpAddrValue(value);
+  function handleFormSubmit(e: Event) {
+    if (e.target instanceof HTMLFormElement) {
+      e.preventDefault();
+      handelFormButtonClick();
+      if (formState === 'valid') {
+        const formData: FormDataType = Object.entries(formElemsState).reduce((acc, [ name, { value }]) => ({...acc, [name]: value }), {});
+        console.log(formData);
+        applyFormData(formData);
+      }
     }
   }
 
   return (
-    <form className="flex flex-col gap-y-3 max-w-96 items-center">
+    <form className="flex flex-col gap-y-3 max-w-96 items-center" onSubmit={handleFormSubmit}>
       <Input elemName="mac-address" type="text" label="Camera MAC address" required={true}
-        state="default" placeholder="ff:ff:ff:ff:ff:ff" Icon={Atom} value={macAddrValue}
-        onInput={handleMacOnInput} iconClickHandler={handleGenMacAddrIconClick}
+        state={formElemsState['mac-address'].state} placeholder="ff:ff:ff:ff:ff:ff" Icon={Atom} value={formElemsState['mac-address'].value}
+        onInput={handleOnChange} iconClickHandler={handleGenMacAddrIconClick} errorText={formElemsState['mac-address'].error}
       />
       <Input elemName="ip-address" type="text" label="Camera IP address" required={true}
-        state="default" placeholder="192.168.1.10" value={ipAddrValue}
-        onInput={handleIpOnInput}
+        state={formElemsState['ip-address'].state} placeholder="192.168.1.10" value={formElemsState['ip-address'].value}
+        onInput={handleOnChange} errorText={formElemsState['ip-address'].error}
       />
       <Input elemName="tftp-address" type="text" label="TFTP server IP address" required={true}
-        state="default" placeholder="192.168.1.254" value={tftpAddrValue}
-        onInput={handleTftpOnInput}
+        state={formElemsState['tftp-address'].state} placeholder="192.168.1.254" value={formElemsState['tftp-address'].value}
+        onInput={handleOnChange} errorText={formElemsState['tftp-address'].error}
+
       />
       <Select elemName="mem-chip" label="Type and size of flash memory chip" required={true}
+        state={formElemsState['mem-chip'].state} onInput={handleOnChange}
         description="If you are not sure, select NOR 8M" options={memChipOpts}
       />
-      <Select elemName="firmware-ver" label="Firmware version" options={firmwareVersOpts} />
-      <Select elemName="net-ifaces" label="Network interface" options={netIfacesOpts} />
-      <Select elemName="sd-card" label="SD card slot" options={sdCardSlotsOpts} />
+      <Select elemName="firmware-ver" label="Firmware version" options={firmwareVersOpts}
+        state={formElemsState['firmware-ver'].state} onInput={handleOnChange}
+      />
+      <Select elemName="net-ifaces" label="Network interface" options={netIfacesOpts}
+        state={formElemsState['net-ifaces'].state} onInput={handleOnChange}
+      />
+      <Select elemName="sd-card" label="SD card slot" options={sdCardSlotsOpts}
+        state={formElemsState['sd-card'].state} onInput={handleOnChange}
+      />
       <div className="pt-4 pb-2">
         <MainButton type='submit' caption="Generate Installation Guide" /> 
       </div>
