@@ -1,4 +1,4 @@
-import { FunctionComponent, Ref } from 'preact';
+import { FunctionComponent } from 'preact';
 
 export type InputProps = {
   elemName: string,

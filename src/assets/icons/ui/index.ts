@@ -9,6 +9,9 @@ import cameraPreloader from './camera-preloader.svg?react';
 import Atom from './atom.svg?react';
 import ShowPassword from './show-password.svg?react';
 import HidePassword from './hide-password.svg?react';
+import Play from './play.svg?react';
+import Pause from './pause.svg?react';
+import Refresh from './refresh.svg?react';
 
 export default {
   Burger: burger,
@@ -21,4 +24,7 @@ export default {
   Atom,
   ShowPassword,
   HidePassword,
+  Play,
+  Pause,
+  Refresh,
 }
