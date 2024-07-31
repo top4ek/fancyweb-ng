@@ -26,7 +26,6 @@ export default function InstallationGuideForm({ applyFormData }: { applyFormData
       handelFormButtonClick();
       if (formState === 'valid') {
         const formData: FormDataType = Object.entries(formElemsState).reduce((acc, [ name, { value }]) => ({...acc, [name]: value }), {});
-        console.log(formData);
         applyFormData(formData);
       }
     }
@@ -61,7 +60,7 @@ export default function InstallationGuideForm({ applyFormData }: { applyFormData
         state={formElemsState['sd-card'].state} onInput={handleOnChange}
       />
       <div className="pt-4 pb-2">
-        <MainButton type='submit' caption="Generate Installation Guide" /> 
+        <MainButton type='submit' caption="Generate Installation Guide" size='m' /> 
       </div>
     </form>
   );

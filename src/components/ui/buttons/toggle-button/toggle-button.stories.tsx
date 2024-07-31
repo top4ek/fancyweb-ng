@@ -21,6 +21,10 @@ const meta = {
       },
       control: { type: 'inline-radio' },
     },
+    type: {
+      options: ['button', 'submit', 'reset'],
+      control: { type: 'inline-radio' },
+    },
   },
 } satisfies Meta<typeof ToggleButton>;
 
@@ -33,6 +37,7 @@ export const ToggleButtonStory: Story = {
     size: 'xs',
     initChecked: false,
     disabled: false,
+    type: 'button',
     Icon: Play,
   },
 };
