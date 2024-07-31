@@ -5,7 +5,6 @@ export default function ToggleButton({ size, initChecked, disabled, Icon }: Togg
   const [ checked, setChecked ] = useState<boolean>(initChecked ?? false);
 
   function changeHandler() {
-    console.log('Checkbox changed');
     setChecked(!checked);
   }
 
