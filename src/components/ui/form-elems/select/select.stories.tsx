@@ -9,7 +9,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Select>;
 
-export const SelectStoryDefault: Story = {
+export const SelectStoryDefault = {
   args: {
     elemName: 'memChip',
     label: 'Type and size of flash memory chip',
@@ -34,7 +34,7 @@ export const SelectStoryDefault: Story = {
   },
 } satisfies Story;
 
-export const SelectStoryValid: Story = {
+export const SelectStoryValid = {
   args: {
     elemName: 'memChip',
     label: 'Type and size of flash memory chip',
@@ -59,7 +59,7 @@ export const SelectStoryValid: Story = {
   },
 } satisfies Story;
 
-export const SelectStoryInvalid: Story = {
+export const SelectStoryInvalid = {
   args: {
     elemName: 'memChip',
     label: 'Type and size of flash memory chip',
@@ -84,7 +84,7 @@ export const SelectStoryInvalid: Story = {
   },
 } satisfies Story;
 
-export const SelectStoryDisabled: Story = {
+export const SelectStoryDisabled = {
   args: {
     elemName: 'memChip',
     label: 'Type and size of flash memory chip',
