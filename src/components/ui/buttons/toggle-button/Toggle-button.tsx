@@ -1,12 +1,6 @@
 import type ToggleButtonProps from './toggle-button-types';
-import { useState } from 'preact/hooks';
 
-export default function ToggleButton({ size, initChecked, disabled, Icon }: ToggleButtonProps) {
-  const [ checked, setChecked ] = useState<boolean>(initChecked ?? false);
-
-  function changeHandler() {
-    setChecked(!checked);
-  }
+export default function ToggleButton({ size, checked, disabled, Icon, changeHandler }: ToggleButtonProps) {
 
   function getSize(size: ToggleButtonProps['size']) {
     const sizes:Record<ToggleButtonProps['size'], string> = {
@@ -18,19 +12,22 @@ export default function ToggleButton({ size, initChecked, disabled, Icon }: Togg
     return sizes[size]; 
   }
 
+  function handleChange(e: Event) {
+    if (!(e.target instanceof HTMLInputElement)) return;
+    if (changeHandler) changeHandler(e.target.checked);
+  }
+
   function getClass() {
     const baseClass = `block border border-0 rounded-md relative overflow-hidden flex flex-row justify-center items-center ${getSize(size)}`;
     if (disabled) return `${baseClass} bg-grey flex flex-row justify-center items-center`;
-    return checked
-      ? `${baseClass} bg-btn-blue-click shadow-[inset_3px_3px_6px_#000051]`
-      : `${baseClass} bg-brand-blue`; 
+    return `${baseClass} bg-brand-blue has-[:checked]:bg-btn-blue-click has-[:checked]:shadow-[inset_3px_3px_6px_#000051]`
   }
 
   return (
     <div className="max-w-min rounded">
       <label className={getClass()}>
         {Icon && <Icon />}
-        <input type="checkbox" onChange={changeHandler} {...{checked, disabled}} className="w-0 h-0 absolute -top-1" />
+        <input type="checkbox" onChange={handleChange} {...{checked, disabled}} className="w-0 h-0 absolute -top-1" />
       </label>
     </div>
   );
