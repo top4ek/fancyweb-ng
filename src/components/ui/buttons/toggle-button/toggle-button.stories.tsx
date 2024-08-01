@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/preact';
 import ToggleButton from './Toggle-button';
 import icons from '../../../../assets/icons/ui';
 
-const { Play, Pause, Refresh } = icons;
+const { Play, Pause } = icons;
 
 const meta = {
   component: ToggleButton,
@@ -13,11 +13,10 @@ const meta = {
       control: { type: 'inline-radio' },
     },
     Icon: {
-      options: ['Play', 'Pause', 'Refresh'],
+      options: ['Play', 'Pause'],
       mapping: {
         'Play': Play,
         'Pause': Pause,
-        'Refresh': Refresh,
       },
       control: { type: 'inline-radio' },
     },
@@ -39,5 +38,6 @@ export const ToggleButtonStory: Story = {
     disabled: false,
     type: 'button',
     Icon: Play,
+    changeHandler: (state: boolean) => console.log('Toggle button state: ', state),
   },
 };
