@@ -1,6 +1,7 @@
 import MainButton from '../../ui/buttons/main-button/Main-button';
 import icons from '../../../assets/icons/ui';
 import { useState, useEffect } from 'preact/hooks';
+import Paragraph from '../paragraph/paragraph';
 
 const { Play, Pause, Refresh } = icons;
 let rafTimerID: number;
@@ -61,15 +62,16 @@ export default function HighResTimer() {
 
   return (
     <div className="flex flex-col items-center max-w-full">
-      <p className="font-mono font-bold text-[10vw] leading-[1]">{time}</p>
-      <p className="font-mono text-[4vw]">{fps} fps</p>
-      <div className="flex gap-x-0.5 mt-3">
+      <p className="font-bold text-[10vw] leading-[1]">{time}</p>
+      <p className="text-[4vw]">{fps} fps</p>
+      <div className="flex gap-x-2 mt-3 mb-5">
         { play
             ? <MainButton size='xs' Icon={Pause} type='button' clickHandler={controlBtnClickHandler} />
             : <MainButton size='xs' Icon={Play} type='button' clickHandler={controlBtnClickHandler} />
         }
         <MainButton size='xs' Icon={Refresh} type='button' clickHandler={refreshBtnClickHandler} />
       </div>
+      <Paragraph content="Time shown in milliseconds" size="small" />
     </div>
   );
 }
