@@ -61,7 +61,7 @@ export const headerMenuConstants = [
       },
       {
         title: 'High-Resolution Timer',
-        link: '/high-resolution-timer',
+        link: '/tools/high-resolution-timer',
       },
       {
         title: 'QR Code Generator',
