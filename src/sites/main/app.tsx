@@ -14,6 +14,7 @@ import WebInterface from './pages/about/web-interface';
 import MajesticEndpoints from './pages/about/majestic-endpoints';
 import OpenWall from './pages/open-wall';
 import QRCode from './pages/tools/qr-code';
+import HighResolutionTimer from './pages/tools/high-resolution-timer';
 import DonateBanner from '../../components/widgets/donate-banner/donate-banner';
 import { headerMenuConstants } from './constants'; 
 import { LocationProvider, ErrorBoundary, Router, Route } from 'preact-iso';
@@ -44,6 +45,7 @@ export function App() {
                 <Route path="/majestic-endpoints" component={MajesticEndpoints} />
                 <Route path="/open-wall" component={OpenWall} />
                 <Route path="/tools/qr-code-generator" component={QRCode} />
+                <Route path="/tools/high-resolution-timer" component={HighResolutionTimer} />
               </Router>
             </ErrorBoundary>
           </LocationProvider>
