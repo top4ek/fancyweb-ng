@@ -1,6 +1,6 @@
 import type MainButtonProps from './main-button-types';
 
-export default function MainButton({ size, disabled, caption, type, Icon }: MainButtonProps) {
+export default function MainButton({ size, disabled, caption, type, Icon, clickHandler }: MainButtonProps) {
   function getSize(size: MainButtonProps['size']) {
     const sizes:Record<MainButtonProps['size'], string> = {
       xs: 'w-16 h-8',
@@ -18,7 +18,7 @@ export default function MainButton({ size, disabled, caption, type, Icon }: Main
   }
 
   return (
-    <button className={getClass()} type={type ?? 'button'} {...{disabled}}>
+    <button className={getClass()} type={type ?? 'button'} {...{disabled}} onClick={clickHandler}>
       {caption}
       {Icon && <Icon />}
     </button>
