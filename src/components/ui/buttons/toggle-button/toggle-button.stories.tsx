@@ -34,7 +34,7 @@ type Story = StoryObj<typeof ToggleButton>;
 export const ToggleButtonStory: Story = {
   args: {
     size: 'xs',
-    initChecked: false,
+    checked: false,
     disabled: false,
     type: 'button',
     Icon: Play,
