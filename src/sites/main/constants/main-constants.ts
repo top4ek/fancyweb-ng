@@ -57,7 +57,7 @@ export const headerMenuConstants = [
     children: [
       {
         title: 'Firmware Partition Calculator',
-        link: '/firmware-partition-calculator',
+        link: '/tools/firmware-partition-calculator',
       },
       {
         title: 'High-Resolution Timer',
