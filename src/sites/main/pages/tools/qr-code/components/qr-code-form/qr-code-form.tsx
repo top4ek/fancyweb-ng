@@ -38,7 +38,7 @@ export default function QRCodeForm({ applyFormData }: { applyFormData: (formData
         iconPlace="right" iconClickHandler={handlePassInptIconClick} errorText={formElemsState.password.error}/>
       <div className="pt-3">
       </div>
-      <MainButton type="submit" caption="Generate QR Code" />
+      <MainButton type="submit" caption="Generate QR Code" size="m" />
     </form>
   );
 }
