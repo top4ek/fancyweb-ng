@@ -21,7 +21,7 @@ export default function Input({ elemName, label, borderWidth, borderColor, dir }
 
   return (
     <div className={`border ${borderWidthClasses[borderWidth]} ${borderColorClasses[borderColor]} rounded-md flex flex-col has-[:focus]:outline has-[:focus]:outline-[4px] has-[:focus]:outline-stages-border bg-wallet-bg`}>
-      <label for={elemName} className="text-sm text-dark-grey ml-1 mt-0.5">{label}</label>
+      <label for={elemName} className="text-sm text-dark-grey ml-1 mt-0.5 truncate">{label}</label>
       <input name={elemName} id={elemName} {...{dir}} className="pl-1 py-1 m-2 font-mono text-xl h-7 focus:border-none focus:outline-none"/>
     </div>
   );
