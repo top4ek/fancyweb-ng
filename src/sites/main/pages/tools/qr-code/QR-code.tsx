@@ -19,7 +19,7 @@ export default function QRCode() {
 
   const [ textToCode, setTextToCode ] = useState({
     MeCard: 'WIFI:S:OpenIPC_NFS;T:WPA2;P:project2021;;',
-    OpenIPC: 'wlanssid:OpenIPC_NFS wlanpass:project2021',
+    OpenIPC: 'wlanssid=OpenIPC_NFS\nwlanpass=project2021',
   });
 
   const [ curVisible, setCurVisible ] = useState<captionVariants>('OpenIPC');
