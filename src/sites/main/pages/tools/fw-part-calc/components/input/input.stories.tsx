@@ -6,15 +6,21 @@ const meta = {
   title: 'Design System/UI/Partition Calc Input',
   argTypes: {
     label: {
-      type: 'select',
+      control: {
+        type: 'select',
+      },
       options: ['MTD device name', 'Partition 1 name'],
     },
     borderWidth: {
-      type: 'select',
-      options: ['1px', '3px'],
+      control: {
+        type: 'select',
+      },
+      options: ['1px', '4px'],
     },
     borderColor: {
-      type: 'select',
+      control: {
+        type: 'select',
+      },
       options: [
         'default',
         'partition1',
@@ -27,6 +33,12 @@ const meta = {
         'partition8',
       ],
     },
+    dir: {
+      options: ['ltr', 'rtl'],
+      control: {
+        type: 'radio',
+      },
+    },
   },
 } satisfies Meta<typeof Input>;
 
@@ -38,7 +50,8 @@ export const PartCalcInputStory: Story = {
   args: {
     elemName: 'mtd-dev-name',
     label: 'MTD device name',
-    borderWidth: '3px',
+    borderWidth: '4px',
     borderColor: "partition2",
+    dir: 'ltr',
   },
 }
