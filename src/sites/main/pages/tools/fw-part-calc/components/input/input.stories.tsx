@@ -53,5 +53,6 @@ export const PartCalcInputStory: Story = {
     borderWidth: '4px',
     borderColor: "partition2",
     dir: 'ltr',
+    required: true,
   },
 }

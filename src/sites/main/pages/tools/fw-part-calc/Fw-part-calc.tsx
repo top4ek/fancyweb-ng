@@ -1,6 +1,7 @@
 import H1 from '../../../../../components/ui/headers/h1';
 import Input from './components/input';
 import Output from './components/output';
+import Select from './components/select';
 import MainButton from '../../../../../components/ui/buttons/main-button';
 
 export default function FirmwarePartitionCalculator() {
@@ -19,10 +20,10 @@ export default function FirmwarePartitionCalculator() {
       <div className="flex flex-col gap-y-2">
         <div className="flex flex-col gap-y-2 md:flex-row md:gap-x-2">
           <div className="md:w-[20%]">
-            <Input elemName='mtd-device-name' label='MTD device name' borderWidth='1px' borderColor='default' />
+            <Select label='MTD device name' options={['', 'hi_sfc', 'hinand', 'jz_sfc', 'nor-flash', 'NOR_FLASH', 'sfc', 'spi0.0', 'spi_flash', 'xm_sfc']} />
           </div>
           <div className="md:w-[20%]">
-            <Input elemName='flash-size' label='Flash size, MB' borderWidth='1px' borderColor='default' />
+            <Select label='Flash size, MB' options={['', '4', '8', '16', '32', 'NAND 128', 'NAND 256', 'NAND 512']} />
           </div>
           <div className="md:w-[20%]">
             <Input elemName='initial-offset' label='Initial offset, dec or hex' borderWidth='1px' borderColor='default' />

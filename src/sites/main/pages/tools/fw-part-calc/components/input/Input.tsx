@@ -1,6 +1,6 @@
 import type { InputProps } from './input-types';
 
-export default function Input({ elemName, label, borderWidth, borderColor, dir }: InputProps) {
+export default function Input({ elemName, label, borderWidth, borderColor, dir, required }: InputProps) {
 
   const borderWidthClasses: Record<InputProps['borderWidth'], string> = {
     '1px': 'border-[1px]',
@@ -21,8 +21,9 @@ export default function Input({ elemName, label, borderWidth, borderColor, dir }
 
   return (
     <div className={`border ${borderWidthClasses[borderWidth]} ${borderColorClasses[borderColor]} rounded-md flex flex-col has-[:focus]:outline has-[:focus]:outline-[4px] has-[:focus]:outline-stages-border bg-wallet-bg`}>
-      <label for={elemName} className="text-sm text-dark-grey ml-1 mt-0.5 truncate">{label}</label>
-      <input name={elemName} id={elemName} {...{dir}} className="pl-1 py-1 m-2 font-mono text-xl h-7 focus:border-none focus:outline-none"/>
+      <label for={elemName} className="text-sm text-dark-grey ml-1 mt-0.5 truncate">{label}{required && <sup className="text-red"> *</sup>}</label>
+      <input name={elemName} id={elemName} {...{dir}} className="pl-1 py-1 m-2 mb-0 font-mono text-xl h-7 focus:border-none focus:outline-none"/>
+      <p className="text-red text-xs pl-2">Error description</p>
     </div>
   );
 }
