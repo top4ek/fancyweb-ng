@@ -52,6 +52,7 @@ export const PartCalcInputStory: Story = {
     label: 'MTD device name',
     borderWidth: '4px',
     borderColor: "partition2",
+    value: 'Partition name',
     dir: 'ltr',
     required: true,
   },
