@@ -19,30 +19,30 @@ export default function FirmwarePartitionCalculator() {
       </div>
       <div className="flex flex-col gap-y-2">
         <div className="flex flex-col gap-y-2 md:flex-row md:gap-x-2">
-          <div className="md:w-[20%]">
+          <div className="md:w-[calc(20%-6px)]">
             <Select label='MTD device name' options={['', 'hi_sfc', 'hinand', 'jz_sfc', 'nor-flash', 'NOR_FLASH', 'sfc', 'spi0.0', 'spi_flash', 'xm_sfc']} />
           </div>
-          <div className="md:w-[20%]">
+          <div className="md:w-[calc(20%-6px)]">
             <Select label='Flash size, MB' options={['', 'NOR 4', 'NOR 8', 'NOR 16', 'NOR 32', 'NAND 128', 'NAND 256', 'NAND 512']} />
           </div>
-          <div className="md:w-[20%]">
+          <div className="md:w-[calc(20%-6px)]">
             <Input elemName='initial-offset' label='Initial offset, dec or hex' borderWidth='1px' borderColor='default' value="0x0" dir="rtl" />
           </div>
         </div>
         <div className="flex flex-col gap-y-2 mt-4 md:mt-0 md:flex-row md:gap-x-2 md:items-center">
-          <div className="md:w-[20%]">
+          <div className="w-[20%]">
             <Input elemName='part0-name' label='Partition 0 name' borderWidth='4px' borderColor='partition0' value=""/>
           </div>
-          <div className="md:w-[20%]">
+          <div className="w-[20%]">
             <Input elemName='part0-size' label='Partition 0 size, KB' borderWidth='1px' borderColor='default' value=""/>
           </div>
-          <div className="md:w-[20%]">
+          <div className="w-[20%]">
             <Output label="Start address" data="0x0" />
           </div>
-          <div className="md:w-[20%]">
+          <div className="w-[20%]">
             <Output label="Hex size, bytes" data="0x0" />
           </div>
-          <div className="md:w-[20%]">
+          <div className="w-[20%]">
             <Output label="End address" data="0x0" />
           </div>
         </div>
