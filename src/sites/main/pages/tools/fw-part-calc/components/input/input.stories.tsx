@@ -39,6 +39,14 @@ const meta = {
         type: 'radio',
       },
     },
+    state: {
+      options: ['default', 'valid', 'error', 'disabled'],
+      control: 'select',
+    },
+    errorText: {
+      options: ['', 'Only number allowed', 'Must not be empty'],
+      control: 'select',
+    },
   },
 } satisfies Meta<typeof Input>;
 
@@ -55,5 +63,6 @@ export const PartCalcInputStory: Story = {
     value: 'Partition name',
     dir: 'ltr',
     required: true,
+    state: 'default',
   },
 }
