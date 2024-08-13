@@ -4,6 +4,16 @@ import Select from './Select';
 const meta = {
   component: Select,
   title: 'Design System/UI/Partition Calc Select',
+  argTypes: {
+    state: {
+      options: ['default', 'valid', 'error', 'disabled'],
+      control: 'select',
+    },
+    errorText: {
+      options: ['', 'Only number allowed', 'Must not be empty'],
+      control: 'select',
+    },
+  },
 } satisfies Meta<typeof Select>;
 
 export default meta;
