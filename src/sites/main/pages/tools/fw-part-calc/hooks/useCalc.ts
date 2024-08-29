@@ -1,11 +1,13 @@
 import { useState } from 'preact/hooks';
 import type { ElemNames, SchemaElem, FormSchema, ValidationElem, FormValidationSchema, DependancyValidableElemNames } from './useCalc-types';
+import type { SliceData } from '../components/part-map/part-map-types';
 import { liteConfig, ultimateConfig } from '../constants';
 import { kiloBytesToBytes, megaBytesToBytes } from '../../../../../../utils/converters';
 
 export default function useCalc(formSchema: FormSchema, formValidationSchema: FormValidationSchema) {
 
   const [ formElemsState, setFormElemsState ] = useState(formSchema); 
+  const [ partMap, setPartMap ] = useState<SliceData[]>([]);
 
   function isValidElemName(name: string): name is ElemNames {
     return Object.keys(formSchema).includes(name);
@@ -19,6 +21,7 @@ export default function useCalc(formSchema: FormSchema, formValidationSchema: Fo
         const curFormElemsState = {...formElemsState, [name]: getCurElemState(value, {...formElemsState[name]}, formValidationSchema[name])};
         const curFormElemsStateDepCheck = validateDependencies(curFormElemsState);
         setFormElemsState(curFormElemsStateDepCheck);
+        setPartMap(getPartMapSlices(curFormElemsStateDepCheck) as SliceData[]);
       }
     }
   }
@@ -371,12 +374,24 @@ export default function useCalc(formSchema: FormSchema, formValidationSchema: Fo
         break;
       }
     }
-    setFormElemsState(tempFormElemsState);
+    setFormElemsState(tempFormElemsState);    
+  }
+
+  function getPartMapSlices(formState: FormSchema) {
+    const size = Number.parseInt(formState['flash-size'].value);
+    const slices = Object.entries(formState)
+    .filter(entry => /^part\d-size$/i.test(entry[0]))
+    .reduce((acc: string[] | [] , el): string[] => [...acc, ...(el[1].value && el[1].state === 'valid' ? [el[1].value] : [])], [])
+    .map(slice => Math.round(kiloBytesToBytes(Number.parseInt(slice)) / megaBytesToBytes(size) * 100))
+    .map(slice => slice === 0 ? 1 : slice)
+    .map((slice, i) => ({ width: slice, color: `partition${i}` }));
+
+    return slices;
   }
 
   function handleRecalculateBtnClick() {
     recalculate();
   }
 
-  return { handleOnChange, handleRecalculateBtnClick, formElemsState, useLiteConfig, useUltimateConfig };
+  return { handleOnChange, handleRecalculateBtnClick, formElemsState, useLiteConfig, useUltimateConfig, partMap };
 }
