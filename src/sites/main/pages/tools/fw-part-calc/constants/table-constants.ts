@@ -7,7 +7,7 @@ export const MTDDevNameOpts: SelectOption[] = [
     text: '',
   },
   { option: 'hi_sfc',
-    text: 'hi_sfc', 
+    text: 'hi_sfc (HiSilicon)', 
   },
   {
     option: 'hinand',
@@ -23,7 +23,7 @@ export const MTDDevNameOpts: SelectOption[] = [
   },
   {
     option: 'NOR_FLASH',
-    text: 'NOR_FLASH',
+    text: 'NOR_FLASH (SigmaStar)',
   }, 
   {
     option: 'sfc',
