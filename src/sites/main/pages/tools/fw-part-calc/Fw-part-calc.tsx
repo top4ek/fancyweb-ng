@@ -3,6 +3,7 @@ import Input from './components/input';
 import Output from './components/output';
 import Select from './components/select';
 import MainButton from '../../../../../components/ui/buttons/main-button';
+import PartitionMap from './components/part-map';
 import useCalc from './hooks/useCalc';
 import { FwCalcFormSchema } from './calcFormSchema';
 import { FwCalcFormValidationSchema } from './calcFormValidationSchema';
@@ -11,7 +12,7 @@ import { useMemo } from 'preact/hooks';
 import { debounce } from '../../../../../utils';
 
 export default function FirmwarePartitionCalculator() {
-  const { handleOnChange, handleRecalculateBtnClick, formElemsState, useLiteConfig, useUltimateConfig } = useCalc(FwCalcFormSchema, FwCalcFormValidationSchema);
+  const { handleOnChange, handleRecalculateBtnClick, formElemsState, useLiteConfig, useUltimateConfig, partMap } = useCalc(FwCalcFormSchema, FwCalcFormValidationSchema);
 
   function handleInputChange(e: Event) {
     if (e.target instanceof HTMLInputElement) {
@@ -183,6 +184,9 @@ export default function FirmwarePartitionCalculator() {
             <Output label="End address" data={formElemsState['part7-end'].value} />
           </div>
         </div>
+      </div>
+      <div className="py-4">
+        <PartitionMap slices={partMap} />
       </div>
     </>
   );
