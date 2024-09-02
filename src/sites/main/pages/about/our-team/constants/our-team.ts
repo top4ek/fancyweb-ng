@@ -326,21 +326,6 @@ export const URLLCandFPVConstants: TeamProps['members'] = [
     ],
   },
   {
-    imgSrc: 'https://avatars.githubusercontent.com/u/3262402',
-    name: 'PetruSoroaga',
-    bio: 'Ruby FPV',
-    socials: [
-      {
-        link: 'https://github.com/PetruSoroaga/RubyFPV/',
-        icon: 'Github',
-      },
-      {
-        link: 'https://t.me/@PetruSoroaga',
-        icon: 'Telegram',
-      }
-    ],
-  },
-  {
     imgSrc: 'https://avatars.githubusercontent.com/u/97629810',
     name: 'TipoMan',
     bio: 'Linux, Sensor Drivers, FPV Systems',
