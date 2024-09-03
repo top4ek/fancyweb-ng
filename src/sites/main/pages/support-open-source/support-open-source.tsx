@@ -4,7 +4,6 @@ import Paragraph from '../../../../components/widgets/paragraph/paragraph';
 import { supportOpenSourceConstants as constants} from './constants';
 import DonateBanner from '../../../../components/widgets/donate-banner/donate-banner';
 import donationNinjas from '../../../../assets/pics/donationNinjas.webp';
-import Wallets from '../../../../components/widgets/wallets/wallets';
 
 export default function SupportOpenSource() {
   return (
@@ -12,7 +11,7 @@ export default function SupportOpenSource() {
       <div className="py-4">
         <H1 content="Support Open Source" />
       </div>
-      <div className="md:grid md:grid-cols-[3fr_6fr_4fr] md:gap-x-6">
+      <div className="md:grid md:grid-cols-[3fr_7fr] md:gap-x-6">
         <div className="flex flex-col gap-y-5">
           <img src={donationNinjas} alt="Brave ninjas collect money" />
           <Paragraph content={constants.part1.p1} />
@@ -34,10 +33,6 @@ export default function SupportOpenSource() {
             <Paragraph content={constants.part2.p9} />
             <Paragraph content={constants.part2.p10} />
           </dl>
-        </div>
-        <div className="first:*:pt-6 first:*:pb-4 md:first:*:pt-0">
-          <H2 content={constants.part3.h2_1} />
-          <Wallets />
         </div>
       </div>
     </>

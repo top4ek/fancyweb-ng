@@ -1,7 +1,7 @@
 import osc from '../../../../assets/icons/supporters/osc_mini.png';
 import github from '../../../../assets/icons/supporters/github-mark.png';
-import chenxing from '../../../../assets/icons/supporters/linuxchenxing_mini.png';
-import ruby from '../../../../assets/icons/supporters/ruby_logo.png';
+import chenxing from '../../../../assets/icons/supporters/chenxing_o.png';
+import ruby from '../../../../assets/icons/supporters/ruby_logo_1.png';
 import runcam from '../../../../assets/icons/supporters/runcam.png';
 import emax from '../../../../assets/icons/supporters/emax.png';
 
