@@ -39,7 +39,17 @@ export default function FirmwarePartitionCalculator() {
       <div className="flex flex-col gap-y-2">
         <div className="flex flex-col gap-y-2 md:flex-row md:gap-x-2">
           <div className="md:w-[calc(20%-6px)]">
-            <Select label='MTD device name' elemName='MTD-device-name' options={MTDDevNameOpts} required={true} onChange={handleOnChange} value={formElemsState['MTD-device-name'].value} state={formElemsState['MTD-device-name'].state} errorText={formElemsState['MTD-device-name'].error} />
+            <Select
+              label='MTD device name'
+              elemName='MTD-device-name'
+              options={MTDDevNameOpts}
+              required={true}
+              onChange={handleOnChange}
+              value={formElemsState['MTD-device-name'].value}
+              state={formElemsState['MTD-device-name'].state}
+              errorText={formElemsState['MTD-device-name'].error}
+              open={formElemsState['MTD-device-name'].state === 'error' ? true : false}
+            />
           </div>
           <div className="md:w-[calc(20%-6px)]">
             <Select label='Flash size, MB' elemName='flash-size' options={flashSizeOpts} required={true} onChange={handleOnChange} value={formElemsState['flash-size'].value} state={formElemsState['flash-size'].state} errorText={formElemsState['flash-size'].error} />
