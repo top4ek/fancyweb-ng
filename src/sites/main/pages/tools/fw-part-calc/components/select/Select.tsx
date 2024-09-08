@@ -1,19 +1,14 @@
 import type { SelectProps } from './select-types';
+import CustomSelect from '../../../../../../../components/ui/form-elems/customSelect';
 
-export default function Select({ elemName, value, label, options, required, onChange, state, errorText }: SelectProps) {
-  const borderColor: Record<SelectProps['state'], string> = {
-    default: '',
-    valid: 'border-green',
-    error: 'border-red',
-    disabled: '',
-  }
+export default function Select({ elemName, value, label, options, required, onChange, state, errorText, open }: SelectProps) {
 
   return (
     <div className="rounded-md flex flex-col bg-wallet-bg w-full border border-wallet-border">
       <p className="text-sm text-dark-grey ml-1 mt-0.5 w-fit truncate">{label}{required && <sup className="text-red"> *</sup>}</p>
-      <select name={elemName} className={`pl-1 py-1 m-2 mb-0 font-mono text-[17px] h-7 text-brand-blue rounded border ${borderColor[state]}`} {...{onChange}}>
-        { options.map(({option, text}) => <option value={option} selected={option === value} className="text-sm">{text}</option>) }
-      </select>
+      <div className="m-2 mb-0">
+        <CustomSelect {...{elemName, value, state, options, onChange, open}} size='sm' value={value} />
+      </div>
       <p className="text-red text-xs pl-3 min-h-5">{state === 'error' && (errorText ?? '')}</p>
     </div>
   );

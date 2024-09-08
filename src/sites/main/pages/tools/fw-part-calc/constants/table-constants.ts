@@ -1,76 +1,95 @@
 import { FormSchema } from '../hooks/useCalc-types';
 import type { SelectOption } from '../types';
+import type { SelectProps } from '../../../../../../components/ui/form-elems/customSelect/select-types';
 
-export const MTDDevNameOpts: SelectOption[] = [
+export const MTDDevNameOpts: SelectProps['options'] = [
   {
+    value: '',
     option: '',
-    text: '',
+    display: '',
   },
-  { option: 'hi_sfc',
-    text: 'hi_sfc (HiSilicon)', 
+  { 
+    value: 'hi_sfc',
+    option: 'hi_sfc (HiSilicon)', 
+    display: 'hi_sfc',
   },
   {
+    value: 'hinand',
     option: 'hinand',
-    text: 'hinand',
+    display: 'hinand',
   },
   {
+    value: 'jz_sfc',
     option: 'jz_sfc',
-    text: 'jz_sfc',
+    display: 'jz_sfc',
   },
   {
+    value: 'nor-flash',
     option: 'nor-flash',
-    text: 'nor-flash',
+    display: 'nor-flash',
   },
   {
-    option: 'NOR_FLASH',
-    text: 'NOR_FLASH (SigmaStar)',
+    value: 'NOR_FLASH',
+    option: 'NOR_FLASH (SigmaStar)',
+    display: 'NOR_FLASH',
   }, 
   {
+    value: 'sfc',
     option: 'sfc',
-    text: 'sfc',
+    display: 'sfc',
   },
   {
+    value: 'spi0.0',
     option: 'spi0.0',
-    text: 'spi0.0',
+    display: 'spi0.0',
   },
   {
+    value: 'spi_flash',
     option: 'spi_flash',
-    text: 'spi_flash',
+    display: 'spi_flash',
   },
   {
+    value: 'xm_sfc',
     option: 'xm_sfc',
-    text: 'xm_sfc',
+    display: 'xm_sfc',
   },
 ];
 
-export const flashSizeOpts: SelectOption[] = [
+export const flashSizeOpts: SelectProps['options'] = [
   {
+    value: '4',
     option: '4',
-    text: 'NOR 4',
+    display: 'NOR 4',
   },
   {
+    value: '8',
     option: '8',
-    text: 'NOR 8',
+    display: 'NOR 8',
   },
   {
+    value: '16',
     option: '16',
-    text: 'NOR 16',
+    display: 'NOR 16',
   },
   {
+   value: '32',
    option: '32',
-   text: 'NOR 32',
+   display: 'NOR 32',
   },
   {
+    value: '128',
     option: '128',
-    text: 'NAND 128',
+    display: 'NAND 128',
   },
   {
+    value: '256',
     option: '256',
-    text: 'NAND 256',
+    display: 'NAND 256',
   },
   {
+    value: '512',
     option: '512',
-    text: 'NAND 512'
+    display: 'NAND 512'
   },
 ];
 
