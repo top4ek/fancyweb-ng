@@ -75,7 +75,7 @@ export default function CustomSelect({ state, value, onChange, options, open, si
         <ArrowDown />
       </div>
       { isOpen && (
-        <ul className="border rounded border-grey py-2 px-1 flex flex-col gap-y-[1px] shadow-md absolute w-full cursor-default bg-white">
+        <ul className="border rounded border-grey py-2 px-1 flex flex-col gap-y-[1px] shadow-md absolute w-full cursor-default bg-white z-50">
           {
             options.map(({value, option, disabled}) =>
               <li
