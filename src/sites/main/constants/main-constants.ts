@@ -12,6 +12,10 @@ export const headerMenuConstants = [
     link: '/support-open-source',
   },
   {
+    title: 'Store',
+    link: 'https://store.openipc.org/',
+  },
+  {
     title: 'Open Wall',
     link: '/open-wall',
   },
@@ -56,16 +60,16 @@ export const headerMenuConstants = [
     title: 'Tools',
     children: [
       {
-        title: 'Firmware Partition Calculator',
-        link: '/tools/firmware-partition-calculator',
+        title: 'QR Code Generator',
+        link: '/tools/qr-code-generator',
       },
       {
         title: 'High-Resolution Timer',
         link: '/tools/high-resolution-timer',
       },
       {
-        title: 'QR Code Generator',
-        link: '/tools/qr-code-generator',
+        title: 'Firmware Partition Calculator',
+        link: '/tools/firmware-partition-calculator',
       },
       {
         title: 'Utilities',
