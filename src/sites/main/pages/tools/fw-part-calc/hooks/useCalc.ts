@@ -8,7 +8,7 @@ export default function useCalc(formSchema: FormSchema, formValidationSchema: Fo
 
   const [ formElemsState, setFormElemsState ] = useState(formSchema); 
   const [ partMap, setPartMap ] = useState<SliceData[]>([]);
-  const [ freeSpace, setFreeSpace ] = useState(formSchema['flash-size'].value);
+  const [ freeSpace, setFreeSpace ] = useState(`${megaBytesToBytes(Number.parseInt(formSchema['flash-size'].value)) / 1024} KB`);
 
   function isValidElemName(name: string): name is ElemNames {
     return Object.keys(formSchema).includes(name);
@@ -296,6 +296,8 @@ export default function useCalc(formSchema: FormSchema, formValidationSchema: Fo
       };
     }
     setFormElemsState(tempFormElemsState);
+    setPartMap(getPartMapSlices(tempFormElemsState) as SliceData[]);
+    getFreeSpace(tempFormElemsState);
   }
 
   function useLiteConfig() {
