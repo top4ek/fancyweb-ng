@@ -8,6 +8,7 @@ export default function useCalc(formSchema: FormSchema, formValidationSchema: Fo
 
   const [ formElemsState, setFormElemsState ] = useState(formSchema); 
   const [ partMap, setPartMap ] = useState<SliceData[]>([]);
+  const [ freeSpace, setFreeSpace ] = useState(formSchema['flash-size'].value);
 
   function isValidElemName(name: string): name is ElemNames {
     return Object.keys(formSchema).includes(name);
@@ -22,6 +23,7 @@ export default function useCalc(formSchema: FormSchema, formValidationSchema: Fo
         const curFormElemsStateDepCheck = validateDependencies(curFormElemsState);
         setFormElemsState(curFormElemsStateDepCheck);
         setPartMap(getPartMapSlices(curFormElemsStateDepCheck) as SliceData[]);
+        getFreeSpace(curFormElemsStateDepCheck);
       }
     }
   }
@@ -389,9 +391,30 @@ export default function useCalc(formSchema: FormSchema, formValidationSchema: Fo
     return slices;
   }
 
+  function getFreeSpace(formState: FormSchema) {
+    const countableFields = Object.keys(formState).filter(key => /^part\d-size$/i.test(key));
+    const flashSize = megaBytesToBytes(Number.parseInt(formState['flash-size'].value));
+    let freeSpace = flashSize;
+    if (formState['initial-offset'].state === 'valid') {
+      freeSpace = flashSize - Number.parseInt(formState['initial-offset'].value);
+    } else {
+      setFreeSpace(freeSpace % 1024 === 0 ? `${freeSpace / 1024} KB` : `${Math.floor(freeSpace / 1024)} KB, ${freeSpace % 1024} bytes`);
+      return;
+    }
+    for (const field of countableFields) {
+      const { value, state } = formState[field as ElemNames];
+      if (state === 'valid') {
+        freeSpace = freeSpace - kiloBytesToBytes(Number.parseInt(value));
+      } else {
+        setFreeSpace(freeSpace % 1024 === 0 ? `${freeSpace / 1024} KB` : `${Math.floor(freeSpace / 1024)} KB, ${freeSpace % 1024} bytes`);
+        break;
+      }
+    }
+  }
+
   function handleRecalculateBtnClick() {
     recalculate();
   }
 
-  return { handleOnChange, handleRecalculateBtnClick, formElemsState, useLiteConfig, useUltimateConfig, partMap };
+  return { handleOnChange, handleRecalculateBtnClick, formElemsState, useLiteConfig, useUltimateConfig, partMap, freeSpace };
 }

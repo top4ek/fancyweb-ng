@@ -12,7 +12,7 @@ import { useMemo } from 'preact/hooks';
 import { debounce } from '../../../../../utils';
 
 export default function FirmwarePartitionCalculator() {
-  const { handleOnChange, handleRecalculateBtnClick, formElemsState, useLiteConfig, useUltimateConfig, partMap } = useCalc(FwCalcFormSchema, FwCalcFormValidationSchema);
+  const { handleOnChange, handleRecalculateBtnClick, formElemsState, useLiteConfig, useUltimateConfig, partMap, freeSpace } = useCalc(FwCalcFormSchema, FwCalcFormValidationSchema);
 
   function handleInputChange(e: Event) {
     if (e.target instanceof HTMLInputElement) {
@@ -196,7 +196,7 @@ export default function FirmwarePartitionCalculator() {
         </div>
       </div>
       <div className="py-4">
-        <PartitionMap slices={partMap} />
+        <PartitionMap slices={partMap} freeSpace={freeSpace} />
       </div>
     </>
   );

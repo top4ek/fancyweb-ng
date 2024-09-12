@@ -1,6 +1,6 @@
 import type { SliceData, PartMapData } from './part-map-types';
 
-export default function PartitionMap({ slices }: PartMapData) {
+export default function PartitionMap({ slices, freeSpace }: PartMapData) {
   
   function getStyle(slice: SliceData) {
     const { color } = slice;
@@ -19,10 +19,13 @@ export default function PartitionMap({ slices }: PartMapData) {
   }
 
   return (
-    <div className="w-full h-8 bg-light-grey flex flex-row border-0 rounded-md overflow-hidden">
+    <div className="w-full h-8 bg-light-grey flex flex-row border-0 rounded-md overflow-hidden relative">
       {
         !!slices.length && slices.map((slice) => (<div className={`${getStyle(slice)}`} style={`width:${slice.width}%;`}></div>))
       }
+      <div className="absolute inset-0 flex flex-row justify-center items-center">
+        <span className="text-lg text-dark-grey">Free space: {freeSpace}</span>
+      </div>
     </div>
   );
 }
