@@ -5,4 +5,5 @@ export type SliceData = {
 
 export type PartMapData = { 
   slices: SliceData[],
+  freeSpace: string,
 };

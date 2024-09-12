@@ -5,6 +5,10 @@ const meta = {
   component: PartitionMap,
   title: 'Design System/Widgets/Partition Map',
   argTypes: {
+    freeSpace: {
+      options: ['10', '100', '1000', '10000'],
+      control: 'select',
+    },
     slices: {
       options: ['Empty', 'One slice', 'Two slices', 'Eight slices'],
       control: 'radio',
