@@ -9,6 +9,7 @@ export default function useCalc(formSchema: FormSchema, formValidationSchema: Fo
   const [ formElemsState, setFormElemsState ] = useState(formSchema); 
   const [ partMap, setPartMap ] = useState<SliceData[]>([]);
   const [ freeSpace, setFreeSpace ] = useState(`${megaBytesToBytes(Number.parseInt(formSchema['flash-size'].value)) / 1024} KB`);
+  const [ partString, setPartString ] = useState<string>('');
 
   function isValidElemName(name: string): name is ElemNames {
     return Object.keys(formSchema).includes(name);
@@ -24,6 +25,7 @@ export default function useCalc(formSchema: FormSchema, formValidationSchema: Fo
         setFormElemsState(curFormElemsStateDepCheck);
         setPartMap(getPartMapSlices(curFormElemsStateDepCheck) as SliceData[]);
         getFreeSpace(curFormElemsStateDepCheck);
+        setPartString('');
       }
     }
   }
@@ -298,6 +300,7 @@ export default function useCalc(formSchema: FormSchema, formValidationSchema: Fo
     setFormElemsState(tempFormElemsState);
     setPartMap(getPartMapSlices(tempFormElemsState) as SliceData[]);
     getFreeSpace(tempFormElemsState);
+    setPartString('');
   }
 
   function useLiteConfig() {
@@ -378,7 +381,8 @@ export default function useCalc(formSchema: FormSchema, formValidationSchema: Fo
         break;
       }
     }
-    setFormElemsState(tempFormElemsState);    
+    setFormElemsState(tempFormElemsState);
+    setPartString(getPartString(tempFormElemsState));
   }
 
   function getPartMapSlices(formState: FormSchema) {
@@ -412,11 +416,20 @@ export default function useCalc(formSchema: FormSchema, formValidationSchema: Fo
         break;
       }
     }
+    setFreeSpace(freeSpace % 1024 === 0 ? `${freeSpace / 1024} KB` : `${Math.floor(freeSpace / 1024)} KB, ${freeSpace % 1024} bytes`);
+  }
+
+  function getPartString(formState: FormSchema) {
+    return Object.keys(formState)
+      .filter((key) => /part\d+-size/i.test(key) && formState[key as ElemNames].state === 'valid')
+      .map((size, i) => [formState[`part${i}-name` as ElemNames].value, formState[size as ElemNames].value])
+      .reduce((acc, entry) => acc + `${entry[1]}k(${entry[0]}),`, `${formState['MTD-device-name'].value}:`)
+      .slice(0, -1);
   }
 
   function handleRecalculateBtnClick() {
     recalculate();
   }
 
-  return { handleOnChange, handleRecalculateBtnClick, formElemsState, useLiteConfig, useUltimateConfig, partMap, freeSpace };
+  return { handleOnChange, handleRecalculateBtnClick, formElemsState, useLiteConfig, useUltimateConfig, partMap, freeSpace, partString };
 }
