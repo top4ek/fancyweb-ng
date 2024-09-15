@@ -4,6 +4,7 @@ import Output from './components/output';
 import Select from './components/select';
 import MainButton from '../../../../../components/ui/buttons/main-button';
 import PartitionMap from './components/part-map';
+import PartitionString from './components/part-string/PartitionString';
 import useCalc from './hooks/useCalc';
 import { FwCalcFormSchema } from './calcFormSchema';
 import { FwCalcFormValidationSchema } from './calcFormValidationSchema';
@@ -12,7 +13,10 @@ import { useMemo } from 'preact/hooks';
 import { debounce } from '../../../../../utils';
 
 export default function FirmwarePartitionCalculator() {
-  const { handleOnChange, handleRecalculateBtnClick, formElemsState, useLiteConfig, useUltimateConfig, partMap, freeSpace } = useCalc(FwCalcFormSchema, FwCalcFormValidationSchema);
+  const {
+    handleOnChange, handleRecalculateBtnClick, formElemsState,
+    useLiteConfig, useUltimateConfig, partMap, freeSpace, partString
+  } = useCalc(FwCalcFormSchema, FwCalcFormValidationSchema);
 
   function handleInputChange(e: Event) {
     if (e.target instanceof HTMLInputElement) {
@@ -197,6 +201,9 @@ export default function FirmwarePartitionCalculator() {
       </div>
       <div className="py-4">
         <PartitionMap slices={partMap} freeSpace={freeSpace} />
+      </div>
+      <div>
+        <PartitionString partStrData={partString} />
       </div>
     </>
   );
