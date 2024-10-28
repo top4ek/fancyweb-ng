@@ -50,7 +50,7 @@ export default function InstallationGuideForm({ applyFormData }: { applyFormData
         onChange={handleOnChange} open={false} size="md" elemName="mem-chip" label="Type and size of flash memory chip"
         description="If you are not sure, select NOR 8M"
       />
-      <CustomSelect state={formElemsState['firmware-ver'].state} options={firmwareVersOpts} value={netIfacesOpts[0].value}
+      <CustomSelect state={formElemsState['firmware-ver'].state} options={firmwareVersOpts} value={firmwareVersOpts[0].value}
         onChange={handleOnChange} open={false} size="md" elemName='firmware-ver' label="Firmware version"
       />
       <CustomSelect state={formElemsState['net-ifaces'].state} options={netIfacesOpts} value={netIfacesOpts[0].value}
