@@ -11,4 +11,6 @@ export type SelectProps = {
   }[],
   open?: boolean,
   size?: 'sm' | 'md' | 'xl',
+  label?: string,
+  description?: string,
 }

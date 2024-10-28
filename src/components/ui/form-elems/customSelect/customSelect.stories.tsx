@@ -41,5 +41,7 @@ export const CustomSelectStoryDefault = {
           {value:'spi_flash', option:'spi_flash', display:'spi_flash', disabled: true},
           {value:'xm_sfc', option:'xm_sfc', display:'xm_sfc', disabled: false},
     ],
+    label: 'Network interface',
+    description: 'If you\'re not sure, select NOR 8M',
   },
 } satisfies Story;
