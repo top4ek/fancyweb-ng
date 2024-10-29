@@ -1,5 +1,4 @@
 import Input from '../../../../../../components/ui/form-elems/input';
-import Select from '../../../../../../components/ui/form-elems/select/Select';
 import icons from '../../../../../../assets/icons/ui';
 import MainButton from '../../../../../../components/ui/buttons/main-button';
 import { generateRandomMacAddress } from '../../../../../../utils';
@@ -33,7 +32,7 @@ export default function InstallationGuideForm({ applyFormData }: { applyFormData
   }
 
   return (
-    <form className="flex flex-col gap-y-3 max-w-96 items-center" onSubmit={handleFormSubmit}>
+    <form className="flex flex-col gap-y-1 max-w-96 items-center" onSubmit={handleFormSubmit}>
       <Input elemName="mac-address" type="text" label="Camera MAC address" required={true}
         state={formElemsState['mac-address'].state} placeholder="ff:ff:ff:ff:ff:ff" Icon={Atom} value={formElemsState['mac-address'].value}
         onInput={handleOnChange} iconClickHandler={handleGenMacAddrIconClick} errorText={formElemsState['mac-address'].error}
@@ -50,15 +49,21 @@ export default function InstallationGuideForm({ applyFormData }: { applyFormData
         onChange={handleOnChange} open={false} size="md" elemName="mem-chip" label="Type and size of flash memory chip"
         description="If you are not sure, select NOR 8M"
       />
-      <CustomSelect state={formElemsState['firmware-ver'].state} options={firmwareVersOpts} value={firmwareVersOpts[0].value}
-        onChange={handleOnChange} open={false} size="md" elemName='firmware-ver' label="Firmware version"
-      />
-      <CustomSelect state={formElemsState['net-ifaces'].state} options={netIfacesOpts} value={netIfacesOpts[0].value}
-        onChange={handleOnChange} open={false} size="md" elemName="net-ifaces" label="Network interface"
-      />
-      <CustomSelect state={formElemsState['sd-card'].state} options={sdCardSlotsOpts} value={sdCardSlotsOpts[0].value}
-        onChange={handleOnChange} open={false} size="md" elemName="sd-card" label="SD card slot"
-      />
+      <div className="w-full pb-4">
+        <CustomSelect state={formElemsState['firmware-ver'].state} options={firmwareVersOpts} value={firmwareVersOpts[0].value}
+          onChange={handleOnChange} open={false} size="md" elemName='firmware-ver' label="Firmware version"
+        />
+      </div>
+      <div className="w-full pb-4">
+        <CustomSelect state={formElemsState['net-ifaces'].state} options={netIfacesOpts} value={netIfacesOpts[0].value}
+          onChange={handleOnChange} open={false} size="md" elemName="net-ifaces" label="Network interface"
+        />
+      </div>
+      <div className="w-full pb-4">
+        <CustomSelect state={formElemsState['sd-card'].state} options={sdCardSlotsOpts} value={sdCardSlotsOpts[0].value}
+          onChange={handleOnChange} open={false} size="md" elemName="sd-card" label="SD card slot"
+        />
+      </div>
       <div className="pt-4 pb-2">
         <MainButton type='submit' caption="Generate Installation Guide" size='m' /> 
       </div>
