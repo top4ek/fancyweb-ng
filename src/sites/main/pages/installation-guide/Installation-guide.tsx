@@ -70,12 +70,12 @@ export default function InstallationGuide() {
           <div className="bg-wallet-bg w-full md:w-[60%] p-4 rounded-[4px]">
             <div className="w-full overflow-x-auto flex flex-col gap-y-1">
               <p className="text-nowrap text-red"># Enter commands line by line! Do not copy and paste multiple lines at once!</p>
-              <p className="text-nowrap text-warning-text">setenv ipaddr {`${settings['ip-address']}`}; setenv serverip 192.168.1.254</p>
+              <p className="text-nowrap text-warning-text">setenv ipaddr {`${settings['ip-address']}`}; setenv serverip {`${settings['tftp-address']}`}</p>
               <p className="text-nowrap text-warning-text">mw.b 0x42000000 0xff 0x800000</p>
               <p className="text-nowrap text-warning-text">sf probe 0; sf read 0x42000000 0x0 0x800000</p>
               <p className="text-nowrap text-warning-text">tftpput 0x42000000 0x800000 backup-{`${curModel.toLowerCase()}`}-{`${settings['mem-chip'].replace(' ', '').toLowerCase()}`}.bin</p>
               <p className="text-nowrap text-red"># If there is no tftpput but tftp then run this instead</p>
-              <p className="text-nowrap text-warning-text pb-2">tftp 0x42000000 backup-{`${curModel.toLowerCase()}`}-{`${settings['mem-chip'].replace(' ', '').toLowerCase()}`} 0x800000</p>
+              <p className="text-nowrap text-warning-text pb-2">tftp 0x42000000 backup-{`${curModel.toLowerCase()}`}-{`${settings['mem-chip'].replace(' ', '').toLowerCase()}`}.bin 0x800000</p>
             </div>
           </div>
         </div>
