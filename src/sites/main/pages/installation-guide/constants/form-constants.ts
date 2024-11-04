@@ -18,6 +18,7 @@ export const memChipOpts = [
     value: 'NAND',
     option: 'NAND',
     display: 'NAND',
+    disabled: true,
   },
 ];
 
