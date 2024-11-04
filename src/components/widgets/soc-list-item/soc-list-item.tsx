@@ -31,7 +31,7 @@ export default function SoCListItem(props: SoCItemProps) {
         {SoCItemSpecificConstants.installationCellTitle}
       </p>
       <p className="col-start-2 col-end-6 row-start-4 row-end-5 pb-1 bg-wallet-bg text-center md:min-w-56 md:text-left md:shrink-0 md:grow-[4] md:basis-0 md:p-0 md:pl-2 md:content-center">
-        {firmware.length > 0
+        {firmware.length > 0 && address !== null && address.length > 0
           ? <a className="text-brand-blue hover:text-btn-blue-hover" href={`${addr}/${vendor}/${model}`}>{installationAlternatives.yes}</a>
           : installationAlternatives.no
         }

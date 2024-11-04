@@ -10,7 +10,15 @@ import CustomSelect from '../../../../../../components/ui/form-elems/customSelec
 
 const { Atom } = icons;
 
-export type FormDataType = Record<keyof typeof installationGuideFormSchema, string>; 
+//export type FormDataType = Record<keyof typeof installationGuideFormSchema, string>; 
+export type FormDataType = {
+  "ip-address": string,
+  "tftp-address": string,
+  "mem-chip": "NOR 8M" | "NOR 16M" | "NOR 32M" | "NAND",
+  "firmware-ver": "Lite" | "Ultimate" | "FPV" | "Rubyfpv" | "VENC",
+  "net-ifaces": string,
+  "sd-card": string,
+}
 
 export default function InstallationGuideForm({ applyFormData }: { applyFormData: (formData: FormDataType) => void }) {
   const { handleOnChange, handelFormButtonClick, formElemsState, formState } = useForm(installationGuideFormSchema, installationGuideFormValidationSchema);
@@ -25,7 +33,7 @@ export default function InstallationGuideForm({ applyFormData }: { applyFormData
       e.preventDefault();
       handelFormButtonClick();
       if (formState === 'valid') {
-        const formData: FormDataType = Object.entries(formElemsState).reduce((acc, [ name, { value }]) => ({...acc, [name]: value }), {});
+        const formData = Object.entries(formElemsState).reduce((acc, [ name, { value }]) => ({...acc, [name]: value }), {}) as FormDataType;
         applyFormData(formData);
       }
     }

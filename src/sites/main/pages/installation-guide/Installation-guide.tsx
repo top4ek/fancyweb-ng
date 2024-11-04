@@ -9,23 +9,20 @@ import { FormDataType } from './components/installation-guide-form/Installation-
 import { useState } from 'preact/hooks';
 import icons from '../../../../assets/icons/social';
 
-const tempSettings = {
-  "mac-address": "F2:95:4A:E2:44:08",
-  "ip-address": "192.168.1.10",
-  "tftp-address": "192.168.1.254",
-  "mem-chip": "NOR 8M",
-  "firmware-ver": "Lite",
-  "net-ifaces": "Camera has only Ethernet interface",
-  "sd-card": "Camera does not have an SD card slot"
+const sizeMapping = {
+  'NOR 8M': '0x800000',
+  'NOR 16M': '0x1000000',
+  'NOR 32M': '0x2000000',
+  'NAND': '',
 }
 
 export default function InstallationGuide() {
   const location = useLocation();
   const [ curVendor, curModel ] = location.path.split('/').slice(2);
-  const { stage } = socs.filter(({vendor, model}) =>
+  const [{ stage }] = socs.filter(({vendor, model}) =>
     vendor.toLowerCase() === curVendor.toLowerCase() &&
     model.toLowerCase() === curModel.toLowerCase()
-  )[0];
+  );
   const Stage = stageIcons[stage];
   const [ settings, setSettings ] = useState<FormDataType | null>(null);
   const Github = icons['Github'];
@@ -62,6 +59,11 @@ export default function InstallationGuide() {
 
   function FirmwareSaving({ settings }: { settings: FormDataType}) {
     console.log(settings);
+    const [{ address}] = socs.filter(({vendor, model}) =>
+      vendor.toLowerCase() === curVendor.toLowerCase() &&
+      model.toLowerCase() === curModel.toLowerCase()
+    );
+
     return (
       <div className="w-full bg-warning-bg border-2 rounded border-warning-border p-4">
         <p className="text-3xl font-medium text-warning-text pb-2">Save the original firmware</p>
@@ -74,11 +76,11 @@ export default function InstallationGuide() {
             <div className="w-full overflow-x-auto flex flex-col gap-y-1">
               <p className="text-nowrap text-red"># Enter commands line by line! Do not copy and paste multiple lines at once!</p>
               <p className="text-nowrap text-warning-text">setenv ipaddr {`${settings['ip-address']}`}; setenv serverip {`${settings['tftp-address']}`}</p>
-              <p className="text-nowrap text-warning-text">mw.b 0x42000000 0xff 0x800000</p>
-              <p className="text-nowrap text-warning-text">sf probe 0; sf read 0x42000000 0x0 0x800000</p>
-              <p className="text-nowrap text-warning-text">tftpput 0x42000000 0x800000 backup-{`${curModel.toLowerCase()}`}-{`${settings['mem-chip'].replace(' ', '').toLowerCase()}`}.bin</p>
+              <p className="text-nowrap text-warning-text">mw.b {address} 0xff {sizeMapping[settings['mem-chip']]}</p>
+              <p className="text-nowrap text-warning-text">sf probe 0; sf read {address} 0x0 {sizeMapping[settings['mem-chip']]}</p>
+              <p className="text-nowrap text-warning-text">tftpput {address} {sizeMapping[settings['mem-chip']]} backup-{`${curModel.toLowerCase()}`}-{`${settings['mem-chip'].replace(' ', '').toLowerCase()}`}.bin</p>
               <p className="text-nowrap text-red"># If there is no tftpput but tftp then run this instead</p>
-              <p className="text-nowrap text-warning-text pb-2">tftp 0x42000000 backup-{`${curModel.toLowerCase()}`}-{`${settings['mem-chip'].replace(' ', '').toLowerCase()}`}.bin 0x800000</p>
+              <p className="text-nowrap text-warning-text pb-2">tftp {address} backup-{`${curModel.toLowerCase()}`}-{`${settings['mem-chip'].replace(' ', '').toLowerCase()}`}.bin {sizeMapping[settings['mem-chip']]}</p>
             </div>
           </div>
         </div>
@@ -90,6 +92,11 @@ export default function InstallationGuide() {
   }
 
   function FirmwareFlashing({ settings }: { settings: FormDataType}) {
+    const [{ address}] = socs.filter(({vendor, model}) =>
+      vendor.toLowerCase() === curVendor.toLowerCase() &&
+      model.toLowerCase() === curModel.toLowerCase()
+    );
+
     return (
       <div className="w-full bg-input-bg-blue border-2 rounded border-light-blue p-4">
         <p className="text-3xl font-medium text-action-blue pb-2">Flash full OpenIPC Firmware image</p>
@@ -116,12 +123,12 @@ export default function InstallationGuide() {
             <div className="w-full overflow-x-auto flex flex-col gap-y-1">
               <p className="text-nowrap text-red"># Enter commands line by line! Do not copy and paste multiple lines at once!</p>
               <p className="text-nowrap text-action-blue">setenv ipaddr {`${settings['ip-address']}`}; setenv serverip {`${settings['tftp-address']}`}</p>
-              <p className="text-nowrap text-action-blue">mw.b 0x42000000 0xff 0x800000</p>
-              <p className="text-nowrap text-action-blue">tftpboot 0x42000000 openipc-gk7205v210-lite-8mb.bin</p>
+              <p className="text-nowrap text-action-blue">mw.b {address} 0xff {sizeMapping[settings['mem-chip']]}</p>
+              <p className="text-nowrap text-action-blue">tftpboot {address} openipc-gk7205v210-lite-8mb.bin</p>
               <p className="text-nowrap text-red"># If there is no tftpput but tftp then run this instead</p>
-              <p className="text-nowrap text-action-blue">tftp 0x42000000  openipc-gk7205v210-lite-8mb.bin</p>
+              <p className="text-nowrap text-action-blue">tftp {address}  openipc-gk7205v210-lite-8mb.bin</p>
               <p className="text-nowrap text-action-blue">sf probe 0; sf lock 0;</p>
-              <p className="text-nowrap text-action-blue">sf erase 0x0 0x800000; sf write 0x42000000 0x0 0x800000</p>
+              <p className="text-nowrap text-action-blue">sf erase 0x0 {sizeMapping[settings['mem-chip']]} ; sf write {address} 0x0 {sizeMapping[settings['mem-chip']]}</p>
               <p className="text-nowrap text-action-blue">reset</p>
               <p className="text-nowrap text-red pb-2"># The camera will restart automatically.</p>
             </div>
