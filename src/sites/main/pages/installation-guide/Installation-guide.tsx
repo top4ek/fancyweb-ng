@@ -145,7 +145,7 @@ export default function InstallationGuide() {
           Congratulations! At this moment, you have OpenIPC Firmware ({`${settings['firmware-ver']}`}) installed.
         </p>
         <p className="text-base text-action-blue pb-2">
-          Open camera's web interface on port 85 (http://{`${settings['ip-address']}`}:85/) and sign in using login <b>root</b> and password <b>12345</b> to sign in. You will be asked to set up your own secure password once signed in. To access the camera via ssh or UART use same login and password as above.
+          Open camera's web interface on http://{`${settings['ip-address']}`}/ and sign in using login <b>root</b> and password <b>12345</b>. You will be asked to set up your own secure password once signed in. To access the camera via ssh or UART use same login and password as above.
         </p>
       </div>
     );
