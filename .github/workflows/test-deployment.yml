@@ -1,0 +1,16 @@
+name: test-deployment
+run-name: Test deployment with GH Actions
+on:
+  push:
+    branchs:
+      - test-deploy
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.11'
+      - run: yarn install
+      - run: yarn run build-main
