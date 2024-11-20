@@ -4,6 +4,8 @@ on:
   push:
     branchs:
       - test-deploy
+env:
+  env_var: ${{ vars.SERVER_IP }}
 jobs:
   build:
     runs-on: ubuntu-latest
