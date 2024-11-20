@@ -34,5 +34,5 @@ jobs:
         with:
           name: production-build
       - name: Upload prod build to server
-        working-directory: scripts
+        working-directory: ./scripts/
         run: ./copy2site.sh
