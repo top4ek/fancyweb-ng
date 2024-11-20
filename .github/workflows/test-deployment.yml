@@ -35,5 +35,6 @@ jobs:
           name: production-build
       - name: Upload prod build to server
         working-directory: scripts
-        run: pwd
-        run: ./copy2site.sh
+        run: |
+          pwd
+          ./copy2site.sh
