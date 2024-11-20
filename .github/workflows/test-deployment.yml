@@ -27,9 +27,8 @@ jobs:
           path: dist
   deploy:
     runs-on: ubuntu-latest
-    environment: fancyweb-ng
     env:
-      SERVER_IP: ${{ vars.SERVER_IP }}
+      SERVER_NAME: ${{ vars.SERVER_NAME }}
     needs: build
     steps:
       - uses: actions/checkout@v4
@@ -42,5 +41,5 @@ jobs:
         run: |
           pwd
           ls
-          echo "$SERVER_IP"
+          echo "$SERVER_NAME"
           ./copy2site.sh 
