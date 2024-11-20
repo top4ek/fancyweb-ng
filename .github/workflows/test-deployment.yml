@@ -4,8 +4,6 @@ on:
   push:
     branchs:
       - test-deploy
-env:
-  SERVER_IP: ${{ env.SERVER_IP }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -42,5 +40,5 @@ jobs:
           pwd
           ls
           echo "$SERVER_IP"
-          echo "${{ env.SERVER_IP }}"
+          echo "${{ vars.SERVER_IP }}"
           ./copy2site.sh 
