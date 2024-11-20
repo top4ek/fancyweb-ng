@@ -5,7 +5,7 @@ on:
     branchs:
       - test-deploy
 env:
-  env_var: ${{ vars.SERVER_IP }}
+  SERVER_IP: ${{ vars.SERVER_IP }}
 jobs:
   build:
     runs-on: ubuntu-latest
