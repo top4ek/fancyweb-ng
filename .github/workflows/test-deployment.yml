@@ -12,7 +12,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20.11'
-      - run: corepack enable
-      - run: yarn set version stable
-      - run: yarn install
-      - run: yarn run build-main
+      - name: Enable and set up Yarn
+        run: |
+          corepack enable
+          yarn set version stable
+      - name: Install packages and build
+        run: |
+          yarn install
+          yarn run build-main
