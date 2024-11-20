@@ -41,5 +41,5 @@ jobs:
         run: |
           pwd
           ls
-          echo $SERVER_IP
+          echo "$SERVER_IP"
           ./copy2site.sh 
