@@ -29,6 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - uses: actions/checkout@v4
       - name: Download production articfact
         uses: actions/download-artifact@v4
         with:
@@ -37,6 +38,4 @@ jobs:
         run: |
           pwd
           ls
-          cd ..
-          pwd
-          ls
+        
