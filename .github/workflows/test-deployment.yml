@@ -27,6 +27,7 @@ jobs:
           path: dist
   deploy:
     runs-on: ubuntu-latest
+    environment: fancyweb-ng
     needs: build
     steps:
       - uses: actions/checkout@v4
