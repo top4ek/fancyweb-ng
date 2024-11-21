@@ -37,11 +37,10 @@ jobs:
         with:
           name: production-build
       - name: Upload prod build to server
-        working-directory: ./scripts
         uses: appleboy/ssh-action@v1.2.0
         with:
-          host: ${{ vars.SERVER_NAME }}
+          host: ${{ var.SERVER_NAME }}
           username: root
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
-          script_path: copy2site.sh
+          script_path: ./scripts/copy2site.sh
