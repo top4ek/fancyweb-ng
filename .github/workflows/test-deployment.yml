@@ -37,6 +37,7 @@ jobs:
         with:
           name: production-build
       - name: Display artifact files
+        run: ls
       - name: Prepare folders on production server
         uses: appleboy/ssh-action@v1.2.0
         with:
