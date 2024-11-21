@@ -39,7 +39,7 @@ jobs:
       - name: Upload prod build to server
         uses: appleboy/ssh-action@v1.2.0
         with:
-          host: ${{ var.SERVER_NAME }}
+          host: ${{ vars.SERVER_NAME }}
           username: root
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
