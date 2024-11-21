@@ -40,12 +40,6 @@ jobs:
         run: ls main
       - name: Prepare folders on production server
         uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ vars.SERVER_NAME }}
-          username: root
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          port: 22
-          script_path: ./scripts/copy2site.sh
       - name: Copy build to production server
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -53,5 +47,6 @@ jobs:
           username: root
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
+          rm: true
           source: main/*
-          target: /var/www/webface_test
+          target: /var/www/webface_test/
