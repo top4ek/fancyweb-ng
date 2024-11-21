@@ -69,7 +69,7 @@ export default defineConfig((args) => {
           root: "./src/sites/main",
           publicDir: "./public",
           build: {
-            outDir: '../../../dist/webface_test',
+            outDir: '../../../dist/webface',
             emptyOutDir: true,
           },
           plugins: [preact(), svgr(svgrOpts)],

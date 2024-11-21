@@ -36,8 +36,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: production-build
-      - name: Display artifact files
-        run: ls webface_test
       - name: Prepare folders on production server
         uses: appleboy/ssh-action@v1.2.0
         with:
@@ -53,5 +51,5 @@ jobs:
           username: root
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
-          source: webface_test/*
+          source: webface/*
           target: /var/www/
