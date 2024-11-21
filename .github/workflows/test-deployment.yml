@@ -38,8 +38,10 @@ jobs:
           name: production-build
       - name: Upload prod build to server
         working-directory: ./scripts
-        run: |
-          pwd
-          ls
-          echo "$SERVER_NAME"
-          ./copy2site.sh 
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ vars.SERVER_NAME }}
+          username: root
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 22
+          script_path: copy2site.sh
