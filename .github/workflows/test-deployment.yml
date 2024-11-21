@@ -38,7 +38,7 @@ jobs:
           name: production-build
       - name: Display artifact files
         run: ls -R
-      - name: Upload prod build to server
+      - name: Prepare folders on production server
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ vars.SERVER_NAME }}
@@ -46,3 +46,12 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
           script_path: ./scripts/copy2site.sh
+      - name: Copy build to production server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ vars.SERVER_NAME }}
+          username: root
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 22
+          source: main/*
+          target: /var/www/webface_test
