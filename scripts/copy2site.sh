@@ -1,3 +1,3 @@
 #!/bin/sh
 
-rm -r /var/www/webface
+rm -rf /var/www/webface
