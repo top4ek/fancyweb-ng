@@ -38,8 +38,6 @@ jobs:
           name: production-build
       - name: Display artifact files
         run: ls main
-      - name: Prepare folders on production server
-        uses: appleboy/ssh-action@v1.2.0
       - name: Copy build to production server
         uses: appleboy/scp-action@v0.1.7
         with:
