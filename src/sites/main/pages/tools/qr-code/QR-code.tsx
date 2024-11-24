@@ -28,7 +28,7 @@ export default function QRCode() {
     const { ssid, password } = formData;
     setTextToCode({
       MeCard: `WIFI:S:${ssid};T:WPA2;P:${password};;`,
-      OpenIPC: `wlanssid:${ssid} wlanpass:${password}`, 
+      OpenIPC: `wlanssid=${ssid}\nwlanpass=${password}`, 
     });
   }
 
