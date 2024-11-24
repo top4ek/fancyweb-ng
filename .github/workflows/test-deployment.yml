@@ -44,6 +44,9 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: ${{ secrets.SERVER_SSH_PORT }}
           script_path: ./scripts/copy2site.sh
+          script: |
+            rm -rf /var/www/webface
+            mkdir /var/www/webface
       - name: Copy build to production server
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -51,5 +54,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: ${{ secrets.SERVER_SSH_PORT }}
-          source: webface/*
-          target: /var/www/
+          source: dist/*
+          target: /var/www/webface/

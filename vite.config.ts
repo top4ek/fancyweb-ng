@@ -51,25 +51,12 @@ export default defineConfig((args) => {
       },
     },
     build: {
-      /*
       main: () => {
         return {
           root: "./src/sites/main",
           publicDir: "./public",
           build: {
             outDir: '../../../dist/main',
-            emptyOutDir: true,
-          },
-          plugins: [preact(), svgr(svgrOpts)],
-        }
-      },
-      */
-      main: () => {
-        return {
-          root: "./src/sites/main",
-          publicDir: "./public",
-          build: {
-            outDir: '../../../dist/webface',
             emptyOutDir: true,
           },
           plugins: [preact(), svgr(svgrOpts)],
