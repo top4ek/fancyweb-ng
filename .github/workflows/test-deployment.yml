@@ -39,6 +39,7 @@ jobs:
       - name: List folder
         run: |
           ls
+          ls main
           ls dist
       - name: Prepare folders on production server
         uses: appleboy/ssh-action@v1.2.0
