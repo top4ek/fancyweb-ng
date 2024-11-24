@@ -12,7 +12,7 @@ const meta = {
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Input>;
 
 export const InputStoryDefault: Story = {
   args: {

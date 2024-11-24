@@ -1,1 +1,1 @@
-export * as default from './header-burger-button';
+export { default } from './header-burger-button';

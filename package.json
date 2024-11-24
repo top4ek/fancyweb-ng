@@ -7,36 +7,41 @@
   "scripts": {
     "dev-camera": "vite --mode='camera'",
     "dev-main": "vite --mode='main'",
-    "build": "vite build --mode='main'",
+    "dev-fpv": "vite --mode='fpv'",
+    "build-main": "vite build --mode='main'",
+    "build-fpv": "vite build --mode='fpv'",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test": "vitest"
   },
   "dependencies": {
     "@preact/signals": "^1.2.3",
     "preact": "^10.19.6",
-    "preact-router": "^4.1.2"
+    "preact-iso": "^2.6.3",
+    "preact-render-to-string": "^6.5.5"
   },
   "devDependencies": {
     "@babel/core": "^7.24.5",
     "@chromatic-com/storybook": "^1.3.3",
     "@preact/preset-vite": "^2.8.2",
-    "@storybook/addon-essentials": "^8.1.2",
-    "@storybook/addon-interactions": "^8.1.2",
-    "@storybook/addon-links": "^8.1.2",
-    "@storybook/blocks": "^8.1.2",
-    "@storybook/preact": "^8.1.2",
-    "@storybook/preact-vite": "^8.1.2",
-    "@storybook/test": "^8.1.2",
+    "@storybook/addon-essentials": "^8.2.9",
+    "@storybook/addon-interactions": "^8.2.9",
+    "@storybook/addon-links": "^8.2.9",
+    "@storybook/blocks": "^8.2.9",
+    "@storybook/preact": "^8.2.9",
+    "@storybook/preact-vite": "^8.2.9",
+    "@storybook/test": "^8.2.9",
     "@types/babel__core": "^7",
     "@types/express": "^4",
     "autoprefixer": "^10.4.19",
     "express": "^4.19.2",
     "postcss": "^8.4.38",
-    "storybook": "^8.1.2",
+    "storybook": "^8.2.9",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
-    "vite-plugin-svgr": "^4.2.0"
+    "vite-plugin-svgr": "^4.2.0",
+    "vitest": "^2.0.4"
   }
 }

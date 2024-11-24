@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/preact';
 import Team from './team';
-import { IPCCoreConstants } from '../../../sites/main/pages/our-team/constants';
+import { IPCCoreConstants } from '../../../sites/main/pages/about/our-team/constants';
 
 const meta: Meta<typeof Team> = {
   component: Team,

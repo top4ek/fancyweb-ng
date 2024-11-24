@@ -5,6 +5,7 @@ import SoCIcons from '../../../assets/icons/socs-info';
 export default function SoCListItem(props: SoCItemProps) {
   const { vendor, model, address, stage, firmware } = props;
   const StageIcon = SoCIcons[stage];
+  const addr = window.location;
 
   return (
     <li className="grid grid-cols-5 grid-rows-4 border border-wallet-border rounded-sm md:flex md: flex-row md:flex-nowrap md:border-0 md:border-0 md:gap-x-1 md:min-h-11">
@@ -30,8 +31,8 @@ export default function SoCListItem(props: SoCItemProps) {
         {SoCItemSpecificConstants.installationCellTitle}
       </p>
       <p className="col-start-2 col-end-6 row-start-4 row-end-5 pb-1 bg-wallet-bg text-center md:min-w-56 md:text-left md:shrink-0 md:grow-[4] md:basis-0 md:p-0 md:pl-2 md:content-center">
-        {firmware.length > 0
-          ? <a className="text-brand-blue hover:text-btn-blue-hover" href={`https://openipc.org/supported-hardware/${vendor}/${model}`}>{installationAlternatives.yes}</a>
+        {firmware.length > 0 && address !== null && address.length > 0
+          ? <a className="text-brand-blue hover:text-btn-blue-hover" href={`${addr}/${vendor}/${model}`}>{installationAlternatives.yes}</a>
           : installationAlternatives.no
         }
       </p>
