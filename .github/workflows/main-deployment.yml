@@ -2,8 +2,8 @@ name: test-deployment
 run-name: Test deployment with GH Actions
 on:
   push:
-    branchs:
-      - deploy
+    branches:
+      - 'deploy'
 jobs:
   build:
     runs-on: ubuntu-latest
