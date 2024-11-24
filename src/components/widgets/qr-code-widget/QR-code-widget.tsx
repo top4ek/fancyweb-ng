@@ -5,7 +5,7 @@ export default function QRCodeWidget({ textToCode }: { textToCode: string }) {
   const svgRef = useRef();
   useEffect(() => {
 		const segs: Array<QrSegment> = QrSegment.makeSegments(textToCode);
-    const qr = QrCode.encodeSegments(segs, Ecc.QUARTILE, 1, 40, -1, true);
+    const qr = QrCode.encodeSegments(segs, Ecc.HIGH, 1, 40, -1, true);
     const svgStr = toSvgString(qr, 2, '#fff', '#000');
     const viewBox: string = (/ viewBox="([^"]*)"/.exec(svgStr) as RegExpExecArray)[1];
     const pathD: string = (/ d="([^"]*)"/.exec(svgStr) as RegExpExecArray)[1];
