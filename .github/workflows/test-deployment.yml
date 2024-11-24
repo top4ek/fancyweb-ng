@@ -55,3 +55,13 @@ jobs:
           port: ${{ secrets.SERVER_SSH_PORT }}
           source: main/*
           target: /var/www/webface/
+      - name: Make correct folder structure 
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SERVER_NAME }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: ${{ secrets.SERVER_SSH_PORT }}
+          script: |
+            cp -r /var/www/webface/main/* /var/www/webface/
+            rm -r /var/www/webface/main
