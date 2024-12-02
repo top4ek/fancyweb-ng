@@ -1,4 +1,4 @@
-import { SoCItem } from '@components/widgets/soc-managed-list/types';
+import { SoCItem } from 'components/widgets/soc-managed-list/types';
 
 const vendor = 'Goke';
 export const gokeSOCs: SoCItem[] = [
